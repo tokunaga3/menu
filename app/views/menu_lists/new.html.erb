@@ -1,0 +1,16 @@
+<%= form_with(model: @menu_list, local: true) do |form| %>
+  <% if @menu_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @menu_list.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @menu_list.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+      <%= form.label :メニュー名 %>
+      <%= form.text_field :menu_name %>
+  <%= form.submit "登録"%>
+
+<% end %>

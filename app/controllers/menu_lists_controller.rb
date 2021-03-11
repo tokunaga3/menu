@@ -1,7 +1,8 @@
 class MenuListsController < ApplicationController
+  before_action :set_menu_list, only: [:show, :edit, :update, :destroy]
+
   def index
-    @menu_list = MenuList.find(1)
-    @user = User.find(1)
+    @menu_list = MenuList.all
   end
 
   def new
