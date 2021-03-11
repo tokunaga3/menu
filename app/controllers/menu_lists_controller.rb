@@ -1,6 +1,7 @@
 class MenuListsController < ApplicationController
   def index
-    @menu_list = MenuList.all
+    @menu_list = MenuList.find(1)
+    @user = User.find(1)
   end
 
   def new
