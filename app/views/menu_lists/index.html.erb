@@ -1,11 +1,13 @@
 <!-- メニューを表示 -->
-<%=  @menu_list.find(rand(2.. @menu_list.ids.length)).menu_name
- %>
-
+<div id="namechange">
+<%=  @menu_list.find(rand(2.. @menu_list.ids.length)).menu_name %>
+</div>
 
 <!-- ボタン -->
 <p>メニューを決める</p>
-<button type="button" name="button">メニューを決める</button>
+<div id="text_button">
+<button type="button" id="menu_button"><%= link_to "メニューを決める",menu_lists_path(@menu_list) %></button>
+</div>
 
 <br>
 <!-- メニューを追加する -->
@@ -13,3 +15,13 @@
 <%= %>
 <!-- メニューの一覧が見れる -->
 <p>登録されているメニューの一覧</p>
+
+
+
+<!-- <script>
+  const target = document.getElementById('menu_button');
+  target.addEventListener('click', function() {
+    const aa = document.getElementById('namechange');
+    document.getElementById("namechange").innerHTML = "<%=  @menu_list.find(rand(2.. @menu_list.ids.length)).menu_name %>"
+  });
+</script> -->
