@@ -4,5 +4,6 @@ class MenuList < ApplicationRecord
 
   has_many :menu_families, dependent: :destroy
   has_many :families, through: :menu_families
+  mount_uploader :image, ImageUploader
 
 end

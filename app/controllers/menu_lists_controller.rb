@@ -32,10 +32,10 @@ class MenuListsController < ApplicationController
     end
   end
 
-    def menu_list_params
-      params.require(:menu_list).permit( :menu_name, :user_id,  { family_ids:[] })
-    end
     private
+    def menu_list_params
+      params.require(:menu_list).permit( :menu_name, :user_id, :image )
+    end
 
     def set_menu_list
       @menu_list = MenuList.find(params[:id])

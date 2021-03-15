@@ -3,9 +3,15 @@
 <!-- メニューの一覧が見れる -->
 <p>登録されているメニューの一覧</p>
 
-
+<p>現在登録されているメニュー数は<%= MenuList.count%>個です</p>
 <!-- メニューを表示 -->
-<%=  @menu_list.offset(rand(MenuList.count)).first.menu_name %>
+<% randam_menu = @menu_list.offset(rand(MenuList.count)).first %>
+<%= randam_menu.menu_name %>
+<% unless randam_menu.image.url.nil?%>
+  <%= image_tag randam_menu.image.url, :size =>'300x300' %>
+<% else %>
+    <p class="lead">プロフィール画像：（なし）</p>
+<% end %>
 
 <button type="button" id="menu_button"><%= link_to "メニューを決める",menu_lists_path(@menu_list) %></button>
 

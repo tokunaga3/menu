@@ -12,6 +12,7 @@
 
   <%= form.label :メニュー名 %>
   <%= form.text_field :menu_name %>
+  <%= form.file_field :image %>
   <%= form.collection_select :family_id, Family.all, :family_name, :family_name, include_blank: "選択して下さい" %>
 
   <%= form.submit "登録"%>
