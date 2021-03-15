@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_080100) do
+ActiveRecord::Schema.define(version: 2021_03_14_093147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2021_03_11_080100) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_families_on_user_id"
+  end
+
+  create_table "menu_families", force: :cascade do |t|
+    t.bigint "menu_list_id"
+    t.bigint "family_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["family_id"], name: "index_menu_families_on_family_id"
+    t.index ["menu_list_id"], name: "index_menu_families_on_menu_list_id"
   end
 
   create_table "menu_lists", force: :cascade do |t|
@@ -42,6 +51,8 @@ ActiveRecord::Schema.define(version: 2021_03_11_080100) do
   end
 
   add_foreign_key "families", "users"
+  add_foreign_key "menu_families", "families"
+  add_foreign_key "menu_families", "menu_lists"
   add_foreign_key "menu_lists", "families"
   add_foreign_key "menu_lists", "users"
 end

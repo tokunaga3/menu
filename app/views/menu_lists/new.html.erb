@@ -12,6 +12,8 @@
 
   <%= form.label :メニュー名 %>
   <%= form.text_field :menu_name %>
+  <%= form.collection_select :family_id, Family.all, :family_name, :family_name, include_blank: "選択して下さい" %>
+
   <%= form.submit "登録"%>
 
 <% end %>

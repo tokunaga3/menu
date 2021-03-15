@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   root "menu_lists#index"
   resources :menu_lists
+  resources :families
 end

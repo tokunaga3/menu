@@ -23,6 +23,8 @@ class MenuListsController < ApplicationController
 
   def create
     @menu_list = MenuList.new(menu_list_params)
+    @menu_list.user_id = current_user.id
+    @menu_list.family_id = Family.find_by(family_name:params[:menu_list][:family_id]).id
     if @menu_list.save
       redirect_to menu_lists_path,notice: "メニューを追加しました！"
     else
@@ -30,10 +32,10 @@ class MenuListsController < ApplicationController
     end
   end
 
-  private
     def menu_list_params
-      params.require(:menu_list).permit( :menu_name, :user_id, :family_id)
+      params.require(:menu_list).permit( :menu_name, :user_id,  { family_ids:[] })
     end
+    private
 
     def set_menu_list
       @menu_list = MenuList.find(params[:id])
