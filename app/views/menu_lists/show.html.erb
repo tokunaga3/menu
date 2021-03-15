@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>メニュー名</th>
+    <th>image</th>
+    <th>投稿者</th>
+  </tr>
+  <% @menu_list.each_with_index do |menu_list,ids| %>
+  <tr>
+    <td><%= menu_list.menu_name %></td>
+    <td><%= image_tag menu_list.image.url, :size =>'300x300' %></td>
+    <td><%= menu_list.menu_name %></td>
+  </tr>
+</table>
+
+
+    <% end %>

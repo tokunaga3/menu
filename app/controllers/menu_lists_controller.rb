@@ -1,8 +1,8 @@
 class MenuListsController < ApplicationController
-  before_action :set_menu_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_menu_list, only: [:edit, :update, :destroy]
 
   def index
-    @menu_list = MenuList.all
+    @menu_list = current_user.menu_lists
   end
 
   def new
@@ -10,6 +10,7 @@ class MenuListsController < ApplicationController
   end
 
   def show
+    @menu_list = current_user.menu_lists
   end
 
   def edit
@@ -38,6 +39,7 @@ class MenuListsController < ApplicationController
     end
 
     def set_menu_list
+      binding.pry
       @menu_list = MenuList.find(params[:id])
     end
 end
