@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    <% if user_signed_in? %>
+      <header>
+        <nav>
+          <p><%= current_user.name %>のページ</p>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "メニュー追加",new_menu_list_path(@menu_list) %>
+          <%= link_to "登録メニューの一覧",menu_list_path(current_user) %>
+          <%= link_to "家族名を追加する",new_family_path(current_user) %>
+        </nav>
+      </header>
+      <%= link_to '戻る', 'javascript:history.back()' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
