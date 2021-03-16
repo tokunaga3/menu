@@ -11,6 +11,7 @@ class MenuListsController < ApplicationController
 
   def show
     @menu_list = current_user.menu_lists
+    @family = Family.where(user_id:current_user.id)
   end
 
   def edit

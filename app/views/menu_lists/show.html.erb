@@ -8,9 +8,7 @@
   <tr>
     <td><%= menu_list.menu_name %></td>
     <td><%= image_tag menu_list.image.url, :size =>'300x300' %></td>
-    <td><%= menu_list.menu_name %></td>
+    <td><%= @family.find(menu_list.family_id).family_name %></td>
   </tr>
+  <% end %>
 </table>
-
-
-    <% end %>
