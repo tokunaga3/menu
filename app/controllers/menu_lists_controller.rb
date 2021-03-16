@@ -1,5 +1,6 @@
 class MenuListsController < ApplicationController
   before_action :set_menu_list, only: [:edit, :update, :destroy]
+  before_action :set_family, only: [:show, :new]
 
   def index
     @menu_list = current_user.menu_lists
@@ -11,7 +12,6 @@ class MenuListsController < ApplicationController
 
   def show
     @menu_list = current_user.menu_lists
-    @family = Family.where(user_id:current_user.id)
   end
 
   def edit
@@ -42,5 +42,9 @@ class MenuListsController < ApplicationController
     def set_menu_list
       binding.pry
       @menu_list = MenuList.find(params[:id])
+    end
+
+    def set_family
+      @family = Family.where(user_id:current_user.id)
     end
 end
