@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+header{
+  background-color: rgb(29, 36, 34);
+  height: 5rem;
+}
+#current_user_name{
+  color: white;
+  font-size: 50px;
+  float: left;
+  position: absolute;
+  top:0px;
+  left:20px;
+}
+header a{
+  color: white;
+}
+.hedder_right{
+  float: right;
+  margin-left:40px;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  position: relative;
+
+}

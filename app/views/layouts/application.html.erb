@@ -15,12 +15,12 @@
     <% end %>
     <% if user_signed_in? %>
       <header>
-        <nav>
-          <p><%= current_user.name %>のページ</p>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <%= link_to "メニュー追加",new_menu_list_path(@menu_list) %>
-          <%= link_to "登録メニューの一覧",menu_list_path(current_user) %>
-          <%= link_to "家族名を追加する",new_family_path(current_user) %>
+        <nav class="clearfix">
+          <div id="current_user_name"><%= current_user.name %>'s page</div>
+          <div class="hedder_right"><div class="hedder_right"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div></div>
+          <div class="hedder_right"><%= link_to "メニュー追加",new_menu_list_path(@menu_list) %></div>
+          <div class="hedder_right"><%= link_to "登録メニューの一覧",menu_list_path(current_user) %></div>
+          <div class="hedder_right"><%= link_to "家族名を追加する",new_family_path(current_user) %></div>
         </nav>
       </header>
       <%= link_to '戻る', 'javascript:history.back()' %>
