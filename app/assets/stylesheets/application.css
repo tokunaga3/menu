@@ -17,15 +17,16 @@
 
 header{
   background-color: rgb(29, 36, 34);
-  height: 5rem;
 }
-#current_user_name{
+.current_user_name{
   color: white;
   font-size: 50px;
   float: left;
   position: absolute;
-  top:0px;
   left:20px;
+  font-family: 'Corben', cursive;
+  padding: 10px;
+  height: 100%;
 }
 header a{
   color: white;
@@ -38,6 +39,8 @@ header a{
   content: "";
   display: block;
   clear: both;
+}
+.menu_header{
+  height: 6rem;
   position: relative;
-
 }
