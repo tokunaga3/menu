@@ -33,7 +33,12 @@ header a{
 }
 .hedder_right{
   float: right;
-  margin-left:40px;
+  /* margin-left:40px;
+  margin-right: 40px; */
+  /* margin: 40px; */
+  height: 100%;
+  padding:35px;
+
 }
 .clearfix:after {
   content: "";
@@ -43,4 +48,5 @@ header a{
 .menu_header{
   height: 6rem;
   position: relative;
+  font-family: 'Corben', cursive;
 }

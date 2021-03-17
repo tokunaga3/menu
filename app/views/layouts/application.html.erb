@@ -18,10 +18,10 @@
       <header>
         <nav class="clearfix menu_header">
           <div class="current_user_name"><%= current_user.name %>'s page</div>
-          <div class="hedder_right"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
-          <div class="hedder_right"><%= link_to "メニュー追加",new_menu_list_path(@menu_list) %></div>
-          <div class="hedder_right"><%= link_to "登録メニューの一覧",menu_list_path(current_user) %></div>
-          <div class="hedder_right"><%= link_to "家族名を追加する",new_family_path(current_user) %></div>
+          <div class="hedder_right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
+          <div class="hedder_right"><%= link_to "Add menu",new_menu_list_path(@menu_list) %></div>
+          <div class="hedder_right"><%= link_to "Menu list",menu_list_path(current_user) %></div>
+          <div class="hedder_right"><%= link_to "Add family_name",new_family_path(current_user) %></div>
         </nav>
       </header>
       <%= link_to '戻る', 'javascript:history.back()' %>
