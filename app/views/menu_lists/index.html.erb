@@ -1,11 +1,19 @@
-
-<p>現在登録されているメニュー数は<%= @menu_list.count%>個です</p>
+<div class="clearfix">
+  <p class="menu_count">現在登録されているメニュー数は<%= @menu_list.count%>個です</p>
+</div>
 
 <!--表示されるメニューをセットする -->
-<% if @menu_list.present?%>
-  <% randam_menu = @menu_list.offset(rand(@menu_list.count)).first %>
-  <%= randam_menu.menu_name %>
-  <%= image_tag randam_menu.image.url, :size =>'300x300' %>
+<% if @menu_list.present? %>
+    <% randam_menu = @menu_list.offset(rand(@menu_list.count)).first %>
+  <div class="main">
+    <p class="menu_name"><%= randam_menu.menu_name %></p>
+    <p><%= image_tag randam_menu.image.url, :size =>'300x300' %></p>
+    <button type="button" id="menu_button"><%= link_to "メニューを決める",menu_lists_path(@menu_list) %></button>
+  </div>
+<% else %>
+  <ol class="back_main">
+    <li>「Add family_name」で家族名を追加</li>
+    <li>「Add menu」でメニューを登録。</li>
+    <li>利用開始</li>
+  </ol>
 <% end %>
-
-<button type="button" id="menu_button"><%= link_to "メニューを決める",menu_lists_path(@menu_list) %></button>

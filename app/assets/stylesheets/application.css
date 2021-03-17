@@ -15,6 +15,8 @@
  *= require_self
  */
 
+
+/* ヘッダー */
 header{
   background-color: rgb(29, 36, 34);
 }
@@ -33,12 +35,8 @@ header a{
 }
 .hedder_right{
   float: right;
-  /* margin-left:40px;
-  margin-right: 40px; */
-  /* margin: 40px; */
   height: 100%;
   padding:35px;
-
 }
 .clearfix:after {
   content: "";
@@ -49,4 +47,33 @@ header a{
   height: 6rem;
   position: relative;
   font-family: 'Corben', cursive;
+}
+
+/* トップページ */
+.menu_count{
+  float:right;
+  margin-right: 2rem;
+  font-size: 20px;
+  font-family: 'Anton', sans-serif;
+}
+.main{
+  text-align: center;
+}
+.menu_name{
+  font-family: "Nico Moji";
+  font-size: 20px;
+  font-size: 60px;
+  margin: 0;
+}
+.back_main{
+  margin: 0 auto;
+  width: 50%;
+}
+
+
+/* フラッシュメッセージ */
+.notice {
+    width: 50%;
+    float: left;
+    font-family: 'Anton', sans-serif;
 }

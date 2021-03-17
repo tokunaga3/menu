@@ -8,24 +8,26 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Corben:700 rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
   </head>
 
   <body>
+    <% if user_signed_in? %>
+    <header>
+      <nav class="clearfix menu_header">
+        <div class="current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
+        <div class="hedder_right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
+        <div class="hedder_right"><%= link_to "Menu list",menu_list_path(current_user) %></div>
+        <div class="hedder_right"><%= link_to "Add menu",new_menu_list_path(@menu_list) %></div>
+        <div class="hedder_right"><%= link_to "Add family_name",new_family_path(current_user) %></div>
+      </nav>
+    </header>
+    <% end %>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
-    <% if user_signed_in? %>
-      <header>
-        <nav class="clearfix menu_header">
-          <div class="current_user_name"><%= current_user.name %>'s page</div>
-          <div class="hedder_right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
-          <div class="hedder_right"><%= link_to "Add menu",new_menu_list_path(@menu_list) %></div>
-          <div class="hedder_right"><%= link_to "Menu list",menu_list_path(current_user) %></div>
-          <div class="hedder_right"><%= link_to "Add family_name",new_family_path(current_user) %></div>
-        </nav>
-      </header>
-      <%= link_to '戻る', 'javascript:history.back()' %>
-    <% end %>
     <%= yield %>
+    <p><%= link_to '戻る', 'javascript:history.back()' %></p>
   </body>
 </html>
