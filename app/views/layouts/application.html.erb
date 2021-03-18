@@ -4,6 +4,7 @@
     <title>Menu</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,15 +16,18 @@
   <body>
     <% if user_signed_in? %>
     <header>
-      <nav class="clearfix menu_header">
-        <div class="current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
-        <div class="hedder_right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
-        <div class="hedder_right"><%= link_to "Menu list",menu_list_path(current_user) %></div>
-        <div class="hedder_right"><%= link_to "Add menu",new_menu_list_path(@menu_list) %></div>
-        <div class="hedder_right"><%= link_to "Add family_name",new_family_path(current_user) %></div>
+      <nav class="container-fluid menu_header">
+        <div class="row">
+          <div class="col-12 col-md-4  col-lg-4 text-center text-md-left current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
+          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Add family_name",new_family_path(current_user) %></div>
+          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Add menu",new_menu_list_path(@menu_list) %></div>
+          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Menu list",menu_list_path(current_user) %></div>
+          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
+      </div>
       </nav>
     </header>
     <% end %>
+
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>

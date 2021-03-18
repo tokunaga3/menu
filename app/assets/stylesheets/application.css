@@ -23,29 +23,16 @@ header{
 .current_user_name{
   color: white;
   font-size: 50px;
-  float: left;
-  position: absolute;
-  left:20px;
   font-family: 'Corben', cursive;
   padding: 10px;
-  height: 100%;
 }
 header a{
   color: white;
 }
 .hedder_right{
-  float: right;
-  height: 100%;
   padding:35px;
 }
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 .menu_header{
-  height: 6rem;
-  position: relative;
   font-family: 'Corben', cursive;
 }
 
@@ -61,7 +48,7 @@ header a{
 }
 .menu_name{
   font-family: "Nico Moji";
-  font-size: 20px;
+  font-size: 20vw;
   font-size: 60px;
   margin: 0;
 }
@@ -69,7 +56,9 @@ header a{
   margin: 0 auto;
   width: 50%;
 }
-
+#menu_button a{
+ color: white;
+}
 
 /* フラッシュメッセージ */
 .notice {
@@ -77,3 +66,5 @@ header a{
     float: left;
     font-family: 'Anton', sans-serif;
 }
+
+/* rgb(119, 228, 37) */

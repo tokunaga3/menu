@@ -8,7 +8,7 @@
   <div class="main">
     <p class="menu_name"><%= randam_menu.menu_name %></p>
     <p><%= image_tag randam_menu.image.url, :size =>'300x300' %></p>
-    <button type="button" id="menu_button"><%= link_to "メニューを決める",menu_lists_path(@menu_list) %></button>
+    <button type="button" id="menu_button" class="btn btn-success"><%= link_to "メニューを決める",menu_lists_path(@menu_list) %></button>
   </div>
 <% else %>
   <ol class="back_main">
