@@ -1,9 +1,11 @@
 <div class="clearfix">
-  <p class="menu_count">現在登録されているメニュー数は<%= @menu_list.count%>個です</p>
+  <p class="menu_count">現在登録されているメニュー数は<%= @menu_lists.count%>個です</p>
 </div>
 
 <!--表示されるメニューをセットする -->
-<%= render "randam_menu" , menu_list: @menu_list %>
+<div class="randam_menu">
+  <%= render "randam_menu" , menu_list: @menu_lists %>
+</div>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -20,12 +22,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <%= form_with(model: @menu_lists) do |form| %>
-      <% if @menu_lists.errors.any? %>
+      <%= form_with(model: @menu_list) do |form| %>
+      <% if @menu_list.errors.any? %>
         <div id="error_explanation">
-          <h2><%= @menu_lists.errors.count %>件のエラーがあります。</h2>
+          <h2><%= @menu_list.errors.count %>件のエラーがあります。</h2>
           <ul>
-            <% @menu_lists.errors.full_messages.each do |msg| %>
+            <% @menu_list.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>

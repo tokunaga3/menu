@@ -5,8 +5,8 @@ class MenuListsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @menu_list = current_user.menu_lists
-    @menu_lists = MenuList.new
+    @menu_lists = current_user.menu_lists
+    @menu_list = MenuList.new
   end
 
   # def new
