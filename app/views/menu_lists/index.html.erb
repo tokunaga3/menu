@@ -3,54 +3,45 @@
 </div>
 
 <!--表示されるメニューをセットする -->
-<div id="vue_main">
-  <div v-show="show">
-    <% if @menu_list.present? %>
-        <% randam_menu = @menu_list.offset(rand(@menu_list.count)).first %>
-      <div class="main">
-        <p class="menu_name"><%= randam_menu.menu_name %></p>
-        <p><%= image_tag randam_menu.image.url, :size =>'300x300' %></p>
-        <button type="button" id="menu_button" class="btn btn-success"><%= link_to "メニューを決める",menu_lists_path(@menu_list) %></button>
+<%= render "randam_menu" , menu_list: @menu_list %>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  メニュー追加
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">メニューの追加</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-    <% else %>
-      <ol class="back_main">
-        <li>「Add family_name」で家族名を追加</li>
-        <li>「Add menu」でメニューを登録。</li>
-        <li>利用開始</li>
-      </ol>
-    <% end %>
+      <%= form_with(model: @menu_lists) do |form| %>
+      <% if @menu_lists.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @menu_lists.errors.count %>件のエラーがあります。</h2>
+          <ul>
+            <% @menu_lists.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+        <div class="modal-body">
+          <%= form.label :メニュー名 %>
+          <%= form.text_field :menu_name %>
+          <%= form.file_field :image %>
+          <%= form.collection_select :family_id, @family, :family_name, :family_name, include_blank: "選択して下さい" %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"><%= form.submit "登録"%></button>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <button v-show="button" @click="click">ボタン</button>
 </div>
-
-<%# 保険用 %>
-<%# if @menu_list.present? %>
-    <%# randam_menu = @menu_list.offset(rand(@menu_list.count)).first %>
-  <!-- <div class="main"> -->
-    <!-- <p class="menu_name"><%#= randam_menu.menu_name %></p> -->
-    <!-- <p><%#= image_tag randam_menu.image.url, :size =>'300x300' %></p> -->
-    <!-- <button type="button" id="menu_button" class="btn btn-success"><%#= link_to "メニューを決める",menu_lists_path(@menu_list) %></button> -->
-  <!-- </div> -->
-<%# else %>
-  <!-- <ol class="back_main"> -->
-    <!-- <li>「Add family_name」で家族名を追加</li> -->
-    <!-- <li>「Add menu」でメニューを登録。</li>
-    <li>利用開始</li> -->
-  <!-- </ol> -->
-<%# end %>
-
-<script>
-  new Vue({
-     el: '#vue_main',
-     data: {
-         show: false,
-         button: true
-     },
-     methods: {
-         click: function () {
-             this.show = !this.show,
-             this.button = !this.button
-         }
-     }
- });
-</script>
