@@ -9,8 +9,6 @@ class MenuListsController < ApplicationController
     @menu_list = MenuList.new
   end
 
-  # def new
-  # end
 
   def show
     @menu_list = current_user.menu_lists
@@ -25,7 +23,6 @@ class MenuListsController < ApplicationController
   def destroy
   end
   def create
-    @menu_lists = current_user.menu_lists
     @menu_list = MenuList.new(menu_list_params)
     @menu_list.user_id = current_user.id
     @menu_list.family_id = Family.find_by(family_name:params[:menu_list][:family_id]).id
@@ -35,6 +32,13 @@ class MenuListsController < ApplicationController
       else
         format.html { redirect_to menu_list_path(@menu_list), notice: '投稿できませんでした...' }
       end
+    end
+  end
+
+  def randam_menu
+    @menu_lists = current_user.menu_lists
+    respond_to do |format|
+      format.js { render :randam_menu }
     end
   end
 

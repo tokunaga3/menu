@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   root "menu_lists#index"
-  resources :menu_lists
+  resources :menu_lists do
+    get 'randam_menu', :on => :member
+  end
   resources :families
 end
