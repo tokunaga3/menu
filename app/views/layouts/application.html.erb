@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-12 col-md-4  col-lg-4 text-center text-md-left current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
           <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Add family_name",new_family_path(current_user) %></div>
-          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Add menu",new_menu_list_path(@menu_list) %></div>
+          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-link">Add menu</botton></div>
           <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Menu list",menu_list_path(current_user) %></div>
           <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
       </div>

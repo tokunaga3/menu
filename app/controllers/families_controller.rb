@@ -11,7 +11,6 @@ class FamiliesController < ApplicationController
     @family.user_id = current_user.id
     if @family.save
       format.js { render :index,notice: "家族の名前を追加しました" }
-      # redirect_to menu_lists_path,notice: "家族の名前を追加しました"
     else
       format.html { redirect_to menu_lists_path,notice: "家族の名前を追加しました" }
     end

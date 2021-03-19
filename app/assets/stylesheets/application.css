@@ -29,6 +29,9 @@ header{
 header a{
   color: white;
 }
+.btn-link{
+  color: white;
+}
 .hedder_right{
   padding:35px;
 }
