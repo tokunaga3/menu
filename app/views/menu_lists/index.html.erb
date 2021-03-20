@@ -3,13 +3,15 @@
 </div>
 
 <!--表示されるメニュー -->
-<div id="vue_main">
-  <div v-show="show">
-    <div class="randam_menu">
-      <%= render "randam_menu" , menu_list: @menu_lists %>
+<div class="container">
+  <div id="vue_main" class="row">
+    <div v-show="show" class="offset-md-4 col-md-4">
+      <div class="randam_menu">
+        <%= render "randam_menu" , menu_list: @menu_lists %>
+      </div>
     </div>
+    <button v-show="button" @click="click" class="btn btn-outline-success btn-lg btn-block offset-4 col-4" id="menu_switch">メニューを決める</button>
   </div>
-  <button v-show="button" @click="click">ボタン</button>
 </div>
 
 <script>
@@ -25,7 +27,7 @@
                this.button = !this.button
            }
        }
-   });
+    });
 </script>
 
 <!-- add_menuのフォーム -->
@@ -33,9 +35,3 @@
 
 <!-- add_family_nameのフォーム -->
 <%= render "add_family_form" , family: @family %>
-
-<!-- 保険 %>
-  <!--表示されるメニュー -->
-<!-- <div class="randam_menu">
-  <%#= render "randam_menu" , menu_list: @menu_lists %>
-</div> -->
