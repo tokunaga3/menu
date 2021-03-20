@@ -32,12 +32,46 @@
           <%= form.label :メニュー名 %>
           <%= form.text_field :menu_name %>
           <%= form.file_field :image %>
-          <%= form.collection_select :family_id, @family, :family_name, :family_name, include_blank: "選択して下さい" %>
+          <%= form.collection_select :family_id, @families, :family_name, :family_name, include_blank: "選択して下さい" %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
           <%= form.submit "登録", class:"btn btn-primary"%>
         </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- add_family_nameのフォーム -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">家族名の追加</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_with(model: @family) do |form| %>
+          <% if @family.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= @family.errors.count %>件のエラーがあります。</h2>
+              <ul>
+                <% @family.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= form.label :家族名 %>
+          <%= form.text_field :family_name %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        <%= form.submit "登録", class:"btn btn-primary"%>
+      </div>
       <% end %>
     </div>
   </div>
