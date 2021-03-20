@@ -80,3 +80,8 @@ header a{
   font-family: 'M+ Type-1 (general-j) Black';
 }
 /* rgb(119, 228, 37) */
+
+/* show */
+table{
+  text-align: center;
+}

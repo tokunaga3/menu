@@ -1,15 +1,18 @@
-<table>
-  <tr>
-    <th>メニュー名</th>
-    <th>image</th>
-    <th>投稿者</th>
-  </tr>
+
+<table class="container">
+  <thead class="row mt-5">
+    <tr class="offset-1 col-10 row">
+      <th class="col-4">メニュー名</th>
+      <th class="col-4">image</th>
+      <th class="col-4">投稿者</th>
+    </tr>
+  </thead>
   <% @menu_lists.each_with_index do |menu_list,ids| %>
-      <tfoot class="card">
-        <tr class="card-body">
-            <td><%= menu_list.menu_name %></td>
-            <td><%= image_tag menu_list.image.url, :size =>'300x300' %></td>
-            <td><%= @families.find(menu_list.family_id).family_name %></td>
+      <tfoot class="card row mt-4">
+        <tr class="card-body offset-1 col-10 row">
+            <td class="col-4"><%= menu_list.menu_name %></td>
+            <td class="col-4"><%= image_tag menu_list.image.url, :size =>'300x300' %></td>
+            <td class="col-4"><%= @families.find(menu_list.family_id).family_name %></td>
         </tr>
       </tfoot>
   <% end %>
