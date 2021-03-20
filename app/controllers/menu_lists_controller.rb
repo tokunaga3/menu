@@ -1,8 +1,8 @@
 class MenuListsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :user_signed_in?
   before_action :set_menu_list, only: [:edit, :update, :destroy]
   before_action :set_family, only: [:show, :index]
-  before_action :user_signed_in?
-  before_action :authenticate_user!
 
   def index
     @menu_lists = current_user.menu_lists

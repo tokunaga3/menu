@@ -2,17 +2,12 @@
   <p class="menu_count">現在登録されているメニュー数は<%= @menu_lists.count%>個です</p>
 </div>
 
-<!--表示されるメニューをセットする -->
+<!--表示されるメニュー -->
 <div class="randam_menu">
   <%= render "randam_menu" , menu_list: @menu_lists %>
 </div>
 
-<!-- モーダルボタン -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  メニュー追加
-</button>
-
-<!-- モーダル -->
+<!-- add_menuのフォーム -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -40,8 +35,8 @@
           <%= form.collection_select :family_id, @family, :family_name, :family_name, include_blank: "選択して下さい" %>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary"><%= form.submit "登録"%></button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <%= form.submit "登録", class:"btn btn-primary"%>
         </div>
       <% end %>
     </div>
