@@ -3,16 +3,15 @@ class MenuListsController < ApplicationController
   before_action :user_signed_in?
   before_action :set_menu_list, only: [:edit, :update, :destroy]
   before_action :set_family, only: [:show, :index]
+  before_action :set_menu_family, only: [:show, :index]
 
   def index
     @menu_lists = current_user.menu_lists
-    @menu_list = MenuList.new
-    @family = Family.new
   end
 
 
   def show
-    @menu_list = current_user.menu_lists
+    @menu_lists = current_user.menu_lists
   end
 
   def edit

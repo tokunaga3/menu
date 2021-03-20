@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
    new_user_session_path # ログアウト後に遷移するpathを設定
  end
 
+ def set_menu_family
+   @menu_list = MenuList.new
+   @family = Family.new
+ end
+
   protected
 
   def configure_permitted_parameters
