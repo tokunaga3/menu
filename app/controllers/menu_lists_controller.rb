@@ -22,6 +22,7 @@ class MenuListsController < ApplicationController
 
   def destroy
   end
+  
   def create
     @menu_list = MenuList.new(menu_list_params)
     @menu_list.user_id = current_user.id

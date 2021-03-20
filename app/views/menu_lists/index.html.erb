@@ -3,13 +3,39 @@
 </div>
 
 <!--表示されるメニュー -->
-<div class="randam_menu">
-  <%= render "randam_menu" , menu_list: @menu_lists %>
+<div id="vue_main">
+  <div v-show="show">
+    <div class="randam_menu">
+      <%= render "randam_menu" , menu_list: @menu_lists %>
+    </div>
+  </div>
+  <button v-show="button" @click="click">ボタン</button>
 </div>
+
+<script>
+    new Vue({
+       el: '#vue_main',
+       data: {
+           show: false,
+           button: true
+       },
+       methods: {
+           click: function () {
+               this.show = !this.show,
+               this.button = !this.button
+           }
+       }
+   });
+</script>
 
 <!-- add_menuのフォーム -->
 <%= render "add_menu_form" , menu_lists: @menu_list %>
 
-
 <!-- add_family_nameのフォーム -->
 <%= render "add_family_form" , family: @family %>
+
+<!-- 保険 %>
+  <!--表示されるメニュー -->
+<!-- <div class="randam_menu">
+  <%#= render "randam_menu" , menu_list: @menu_lists %>
+</div> -->
