@@ -5,14 +5,15 @@
     <th>投稿者</th>
   </tr>
   <% @menu_lists.each_with_index do |menu_list,ids| %>
-  <tr>
-    <td><%= menu_list.menu_name %></td>
-    <td><%= image_tag menu_list.image.url, :size =>'300x300' %></td>
-    <td><%= @families.find(menu_list.family_id).family_name %></td>
-  </tr>
+      <tfoot class="card">
+        <tr class="card-body">
+            <td><%= menu_list.menu_name %></td>
+            <td><%= image_tag menu_list.image.url, :size =>'300x300' %></td>
+            <td><%= @families.find(menu_list.family_id).family_name %></td>
+        </tr>
+      </tfoot>
   <% end %>
 </table>
-
 <!-- add_menuのフォーム -->
 <%= render "add_menu_form" , menu_lists: @menu_list %>
 
