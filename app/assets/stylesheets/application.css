@@ -94,7 +94,7 @@ table.show_table td{
   font-family: "Nico Moji";
 }
 .menu_name{
-  font-size: 5vmax;
+  font-size: 4vmax;
   vertical-align: middle;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -102,7 +102,6 @@ table.show_table td{
   width: 100%;
   vertical-align: middle;
 }
-
 
 /* レスポンシブでヘッダーを消す */
 @media screen and (max-width: 460px){

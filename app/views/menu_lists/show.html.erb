@@ -21,7 +21,7 @@
       </tfoot>
   <% end %>
 </table>
-
+<%= paginate @menu_lists, theme: 'twitter-bootstrap-4' %>
 <!-- add_menuのフォーム -->
 <%= render "add_menu_form" , menu_lists: @menu_list %>
 

@@ -5,13 +5,15 @@ class MenuListsController < ApplicationController
   before_action :set_family, only: [:show, :index]
   before_action :set_menu_family, only: [:show, :index]
 
+  PER = 8
+
   def index
     @menu_lists = current_user.menu_lists
   end
 
 
   def show
-    @menu_lists = current_user.menu_lists
+    @menu_lists = current_user.menu_lists.page(params[:page]).per(PER)
   end
 
   def edit
@@ -22,7 +24,7 @@ class MenuListsController < ApplicationController
 
   def destroy
   end
-  
+
   def create
     @menu_list = MenuList.new(menu_list_params)
     @menu_list.user_id = current_user.id
