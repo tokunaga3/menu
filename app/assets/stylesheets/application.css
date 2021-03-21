@@ -82,10 +82,29 @@ header a{
 /* rgb(119, 228, 37) */
 
 /* show */
-table{
+table.show_table{
   text-align: center;
+  table-layout:fixed;
+  width:100%;
+}
+table.show_table td{
 }
 
+.table_data{
+  font-family: "Nico Moji";
+}
+.menu_name{
+  font-size: 5vmax;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  vertical-align: middle;
+}
+
+
+/* レスポンシブでヘッダーを消す */
 @media screen and (max-width: 460px){
-.table_head {display:none}
+  .table_head {display:none}
 }
