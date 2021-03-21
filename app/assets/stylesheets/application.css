@@ -43,67 +43,66 @@ header a{
 }
 
 /* トップページ */
-.menu_count{
-  float:right;
-  margin-right: 2rem;
-  font-size: 20px;
-  font-family: 'Anton', sans-serif;
-}
-.randam_menu{
-  text-align: center;
-}
-.menu_name{
-  font-family: "Nico Moji";
-  font-size: 20vw;
-  font-size: 60px;
-  margin: 0;
-}
-.back_main{
-  margin: 0 auto;
-  width: 50%;
-}
-#menu_button a{
- color: white;
-}
-
-/* フラッシュメッセージ */
-.notice {
-    width: 50%;
-    float: left;
+  .menu_count{
+    float:right;
+    margin-right: 2rem;
+    font-size: 20px;
     font-family: 'Anton', sans-serif;
-}
+  }
+  .randam_menu{
+    text-align: center;
+  }
+  .menu_name{
+    font-family: "Nico Moji";
+    font-size: 20vw;
+    font-size: 60px;
+    margin: 0;
+  }
+  .back_main{
+    margin: 0 auto;
+    width: 50%;
+  }
+  #menu_button a{
+   color: white;
+  }
 
-/* メニュースイッチ */
-#menu_switch{
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  font-family: 'M+ Type-1 (general-j) Black';
-}
-/* rgb(119, 228, 37) */
+  /* フラッシュメッセージ */
+  .notice {
+      width: 50%;
+      float: left;
+      font-family: 'Anton', sans-serif;
+  }
+
+  /* メニュースイッチ */
+  #menu_switch{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    font-family: 'M+ Type-1 (general-j) Black';
+  }
+  /* rgb(119, 228, 37) */
 
 /* show */
-table.show_table{
-  text-align: center;
-  table-layout:fixed;
-  width:100%;
-}
-table.show_table td{
-}
+  table.show_table{
+    text-align: center;
+    table-layout:fixed;
+    width:100%;
+  }
+  table.show_table td{
+  }
 
-.table_data{
-  font-family: "Nico Moji";
-}
-.menu_name{
-  font-size: 4vmax;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 100%;
-  vertical-align: middle;
-}
-
-/* レスポンシブでヘッダーを消す */
-@media screen and (max-width: 460px){
-  .table_head {display:none}
-}
+  .table_data{
+    font-family: "Nico Moji";
+  }
+  .menu_name{
+    font-size: 4vmax;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    vertical-align: middle;
+  }
+  /* レスポンシブでヘッダーを消す */
+  @media screen and (max-width: 460px){
+    .table_head {display:none}
+  }
