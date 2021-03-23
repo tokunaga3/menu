@@ -26,6 +26,7 @@ class MenuListsController < ApplicationController
     if @menu_list.destroy
       redirect_to menu_list_path, notice:"削除しました！"
     else
+      redirect_to menu_list_path, notice:"削除できませんでした！"
     end
   end
 

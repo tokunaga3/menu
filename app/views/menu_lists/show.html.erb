@@ -34,8 +34,7 @@
             </div>
             <div class="modal-body">
               <p>編集</p>
-              <p>削除</p>
-              <%= link_to "イベントを削除する", menu_list_path(menu_list), method: :delete, data: {confirm: "このイベントを削除しますか？"} %>
+                <%= link_to "イベントを削除する", menu_list_path(menu_list), method: :delete, data: {confirm: "このイベントを削除しますか？"}, class:"btn btn-block btn-outline-secondary d-flex align-items-center" %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>

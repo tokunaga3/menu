@@ -68,9 +68,10 @@ header a{
 
   /* フラッシュメッセージ */
   .notice {
-      width: 50%;
+      width: 100%;
       float: left;
       font-family: 'Anton', sans-serif;
+      background-color: rgb(119, 228, 37);
   }
 
   /* メニュースイッチ */
@@ -79,7 +80,6 @@ header a{
     margin-bottom: 10rem;
     font-family: 'M+ Type-1 (general-j) Black';
   }
-  /* rgb(119, 228, 37) */
 
 /* show */
   table.show_table{
@@ -108,4 +108,16 @@ header a{
   /* レスポンシブでヘッダーを消す */
   @media screen and (max-width: 460px){
     .table_head {display:none}
+  }
+
+  .btn-block {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    text-align: left;
+    border-radius: 0;
+    color: Black;
+  }
+  button.btn-block a{
   }
