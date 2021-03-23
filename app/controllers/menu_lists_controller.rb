@@ -23,6 +23,10 @@ class MenuListsController < ApplicationController
   end
 
   def destroy
+    if @menu_list.destroy
+      redirect_to menu_list_path, notice:"削除しました！"
+    else
+    end
   end
 
   def create

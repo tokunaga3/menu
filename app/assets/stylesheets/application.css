@@ -102,6 +102,9 @@ header a{
     width: 100%;
     vertical-align: middle;
   }
+  .btn-outline-light{
+    color: rgb(107, 86, 78);
+  }
   /* レスポンシブでヘッダーを消す */
   @media screen and (max-width: 460px){
     .table_head {display:none}
