@@ -2,7 +2,7 @@ class MenuListsController < ApplicationController
   before_action :authenticate_user!
   before_action :user_signed_in?
   before_action :set_menu_list, only: [:edit, :update, :destroy]
-  before_action :set_family, only: [:show, :index]
+  before_action :set_family, only: [:show, :index, :edit]
   before_action :set_menu_family, only: [:show, :index]
 
   PER = 8
@@ -17,6 +17,10 @@ class MenuListsController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      flash.now[:notice] = 'コメントの編集中'
+      format.js { render :edit }
+    end
   end
 
   def update
@@ -24,7 +28,7 @@ class MenuListsController < ApplicationController
 
   def destroy
     if @menu_list.destroy
-      redirect_to menu_list_path, notice:"削除しました！"
+      redirect_to menu_list_path, notice:"#{@menu_list.menu_name}を削除しました！"
     else
       redirect_to menu_list_path, notice:"削除できませんでした！"
     end
@@ -62,4 +66,5 @@ class MenuListsController < ApplicationController
     def set_family
       @families = Family.where(user_id:current_user.id)
     end
+
 end

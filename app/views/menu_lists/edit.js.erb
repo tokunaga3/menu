@@ -1,0 +1,4 @@
+$("#modal-e<%= @menu_list.id %>").modal();
+$('#my_modal').modal();
+$("#this_menu_<%= @menu_list.id %>").replaceWith("<%= j render 'menu_lists/edit_menu_form', menu_list: @menu_list %>");
+$("#notice").html("<%= j flash[:notice] %>");
