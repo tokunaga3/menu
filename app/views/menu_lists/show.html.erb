@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <% @menu_lists.each_with_index do |menu_list,ids| %>
-    <% @this_menu = @families.find(menu_list.family_id) %>
+    <% @this_menu = this_menu(@families,menu_list) %>
       <tfoot class="card row mt-4 t_foot">
         <tr class="card-body offset-1 col-10 row">
             <td class="col-md-4 d-flex align-items-center justify-content-center table_data">
@@ -27,15 +27,15 @@
       <div class="modal fade" id="modal-<%= menu_list.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">編集・削除？</h5>
+            <div class="modal-header edit_or_delete_header">
+              <h5 class="modal-title edit_or_delete d-flex align-items-center justify-content-center" id="exampleModalLabel">edit or delete？</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <button type="button" class="btn btn-block btn-outline-secondary d-flex align-items-center edit_button" data-toggle="modal" data-target="#modal-e<%= menu_list.id %>">
-                <%= link_to "コメント編集", edit_menu_list_path(menu_list), remote: true %>
+                <%= link_to "編集", edit_menu_list_path(menu_list), remote: true %>
                 編集
               </button>
               <%= link_to "削除", menu_list_path(menu_list), method: :delete, data: {confirm: "#{menu_list.menu_name}を削除しますか？"},

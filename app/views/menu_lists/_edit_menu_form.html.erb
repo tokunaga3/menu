@@ -12,11 +12,9 @@
 
   <%= form.label :メニュー名 %>
   <%= form.text_field :menu_name %>
-  <% unless have_image?(@menu_list)%>
-    <%= image_tag(@menu_list.image.url) %>
-  <% end %>
+  <%= have_image?(@menu_list) %>
   <%= form.file_field :image %>
   <%= form.collection_select :family_id, @families, :family_name, :family_name %>
-  <%= form.submit "登録"%>
+  <%= form.submit "更新"%>
 
 <% end %>
