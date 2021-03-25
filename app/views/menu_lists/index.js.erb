@@ -1,3 +1,10 @@
 $("textarea").val("");
 $("input").val("");
-$('#exampleModal').modal('hide')
+<% if params[:action] == "update" %>
+  $("#modal-e"+"<%= @menu_list.id %>").modal('hide')
+  $("#modal-"+"<%= @menu_list.id %>").modal('hide')
+<% else %>
+  $('#exampleModal').modal('hide')
+<% end %>
+
+// $('#exampleModal').modal('hide')

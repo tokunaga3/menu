@@ -24,6 +24,9 @@ class MenuListsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      format.js { render :index }
+    end
   end
 
   def destroy

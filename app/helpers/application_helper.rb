@@ -10,6 +10,6 @@ module ApplicationHelper
   end
 
   def modal_data_target(menu_list_id)
-    "#modal-e#{menu_list_id}"
+    # modal-e"#{menu_list_id}"
   end
 end
