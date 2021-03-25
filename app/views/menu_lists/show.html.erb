@@ -34,10 +34,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <button type="button" class="btn btn-block btn-outline-secondary d-flex align-items-center edit_button" data-toggle="modal" data-target="#modal-e<%= menu_list.id %>">
-                <%= link_to "編集", edit_menu_list_path(menu_list), remote: true %>
-                編集
-              </button>
+                <%= link_to "編集", edit_menu_list_path(menu_list), remote: true,class:"btn btn-block btn-outline-secondary d-flex align-items-center edit_button", "data-toggle" => "modal", 'data-target' => '#modal-e#{menu_list.id}'%>
               <%= link_to "削除", menu_list_path(menu_list), method: :delete, data: {confirm: "#{menu_list.menu_name}を削除しますか？"},
               class:"btn btn-block btn-outline-secondary d-flex align-items-center edit_button" %>
             </div>
@@ -59,9 +56,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <!-- 試し -->
               <div class="this_menu" id ="this_menu_<%= menu_list.id %>"></div>
-              ///
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
