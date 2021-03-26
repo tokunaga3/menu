@@ -8,6 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
+        <% family_check(@family) %>
         <%= form_with(model: @family) do |form| %>
           <% if @family.errors.any? %>
             <div id="error_explanation">

@@ -9,7 +9,16 @@ module ApplicationHelper
     families.find(menu_list.family_id)
   end
 
-  def modal_data_target(menu_list_id)
-    # modal-e"#{menu_list_id}"
+  def family_check(family)
+    if family.nil?
+      @family = Family.new
+    end
   end
+
+  def menu_check(menu)
+    if menu.nil?
+      @menu_list = MenuList.new
+    end
+  end
+
 end

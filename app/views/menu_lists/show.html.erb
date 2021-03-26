@@ -1,61 +1,7 @@
 <!-- show画面 -->
-<table class="container show_table">
-  <thead class="row mt-5">
-    <tr class="offset-1 col-10 row table_head">
-      <th class="col-4">メニュー名</th>
-      <th class="col-4">image</th>
-      <th class="col-3">投稿者</th>
-      <th class="col-1"></th>
-    </tr>
-  </thead>
-  <% @menu_lists.each_with_index do |menu_list,ids| %>
-    <% @this_menu = this_menu(@families,menu_list) %>
-      <tfoot class="card row mt-4 t_foot">
-        <tr class="card-body offset-1 col-10 row">
-            <td class="col-md-4 d-flex align-items-center justify-content-center table_data">
-              <div class="menu_name">
-                <%= menu_list.menu_name %>
-              </div>
-            </td>
-            <td class="col-md-4 d-flex align-items-center justify-content-center"><%= image_tag menu_list.image.url, class:"img-fluid" ,alt:"Responsive image" %></td>
-            <td class="col-md-3 d-flex align-items-center justify-content-center"><%= @this_menu.family_name %></td>
-            <td class="col-md-1"><button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#modal-<%= menu_list.id %>">・・・</button></td>
-        </tr>
-      </tfoot>
-
-      <!-- 削除・編集呼び出しモーダルウィンドウ -->
-      <div class="modal fade" id="modal-<%= menu_list.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header edit_or_delete_header">
-              <h5 class="modal-title edit_or_delete d-flex align-items-center justify-content-center" id="exampleModalLabel">edit or delete？</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <%= link_to "編集", edit_menu_list_path(menu_list), remote: true,
-              class:"btn btn-block btn-outline-secondary d-flex align-items-center edit_button", "data-toggle" => "modal", 'data-target' => '#modal-e#{menu_list.id}'%>
-              <%= link_to "削除", menu_list_path(menu_list), method: :delete, data: {confirm: "#{menu_list.menu_name}を削除しますか？"},
-              class:"btn btn-block btn-outline-secondary d-flex align-items-center edit_button" %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 編集モーダルウィンドウ -->
-      <div class="modal fade" id="modal-e<%= menu_list.id %>" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="this_menu" id ="this_menu_<%= menu_list.id %>"></div>
-          </div>
-        </div>
-      </div>
-  <% end %>
-</table>
-
+<div class="show_menu">
+    <%= render "show" , menu_lists: @menu_lists, families:@families %>
+</div>
 <!-- ページネーション -->
 <div class="paginate mt-4">
   <%= paginate @menu_lists, theme: 'twitter-bootstrap-4' %>

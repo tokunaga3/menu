@@ -2,8 +2,10 @@ class MenuListsController < ApplicationController
   before_action :authenticate_user!
   before_action :user_signed_in?
   before_action :set_menu_list, only: [:edit, :update, :destroy]
-  before_action :set_family, only: [:show, :index, :edit]
+  before_action :set_family, only: [:show, :index, :edit, :update]
   before_action :set_menu_family, only: [:show, :index]
+  before_action :set_menu_lists, only: [:show, :update]
+
 
   PER = 8
 
@@ -13,19 +15,24 @@ class MenuListsController < ApplicationController
 
 
   def show
-    @menu_lists = current_user.menu_lists.page(params[:page]).per(PER)
   end
 
   def edit
     respond_to do |format|
-      flash.now[:notice] = 'コメントの編集中'
+      flash.now[:notice] = '編集中'
       format.js { render :edit }
     end
   end
 
   def update
     respond_to do |format|
-      format.js { render :index }
+      if @menu_list.update(menu_list_params)
+        flash.now[:notice] = '更新できました'
+        format.js { render :index }
+      else
+        flash.now[:notice] = '更新できませんでした'
+        fomat.html {render :show }
+      end
     end
   end
 
@@ -70,4 +77,7 @@ class MenuListsController < ApplicationController
       @families = Family.where(user_id:current_user.id)
     end
 
+    def set_menu_lists
+      @menu_lists = current_user.menu_lists.page(params[:page]).per(PER)
+    end
 end
