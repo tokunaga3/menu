@@ -25,15 +25,11 @@ class MenuListsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
       if @menu_list.update(menu_list_params)
-        flash.now[:notice] = '更新できました'
-        format.js { render :index }
+        redirect_to menu_list_path, notice:"#{@menu_list.menu_name}を更新しました！"
       else
-        flash.now[:notice] = '更新できませんでした'
-        fomat.html {render :show }
+        redirect_to menu_list_path, notice:"#{@menu_list.menu_name}を更新できませんでした！"
       end
-    end
   end
 
   def destroy
