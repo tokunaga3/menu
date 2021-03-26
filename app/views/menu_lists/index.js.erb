@@ -1,10 +1,11 @@
 $("textarea").val("");
 $("input").val("");
 <% if params[:action] == "update" %>
-  $("#modal-e"+"<%= @menu_list.id %>").modal('hide')
-  $("#modal-"+"<%= @menu_list.id %>").modal('hide')
-  $('.show_menu').html("<%= escape_javascript(render 'show', menu_lists: @menu_lists, families: @families ) %>")
+  $("#modal-e"+"<%= @menu_list.id %>").modal('hide');
+  $("#modal-"+"<%= @menu_list.id %>").modal('hide');
+  // $('body').addClass('modal-open')
+  $('.show_menu').html("<%= escape_javascript(render 'show', menu_lists: @menu_lists, families: @families ) %>");
   // $(".show_menu").replaceWith("<%= j render 'menu_lists/show', menu_lists: @menu_lists, families: @families %>");
 <% else %>
-  $('#exampleModal').modal('hide')
+  $('#exampleModal').modal('hide');
 <% end %>

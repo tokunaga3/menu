@@ -1,4 +1,3 @@
-<!-- show画面 -->
 <div class="show_menu">
     <%= render "show" , menu_lists: @menu_lists, families:@families %>
 </div>
@@ -6,9 +5,7 @@
 <div class="paginate mt-4">
   <%= paginate @menu_lists, theme: 'twitter-bootstrap-4' %>
 </div>
-
 <!-- add_menuのフォーム -->
 <%= render "add_menu_form" , menu_lists: @menu_list %>
-
 <!-- add_family_nameのフォーム -->
 <%= render "add_family_form" , family: @family %>
