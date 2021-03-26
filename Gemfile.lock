@@ -58,7 +58,7 @@ GEM
     bindex (0.8.1)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.7.2)
+    bootsnap (1.7.3)
       msgpack (~> 1.0)
     bootstrap4-kaminari-views (1.0.1)
       kaminari (>= 0.13)
@@ -95,7 +95,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
-    debug_inspector (1.0.0)
+    debug_inspector (1.1.0)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -130,13 +130,19 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.5)
+    mimemagic (0.3.9)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.11.0)
-    mini_mime (1.0.2)
+    mini_mime (1.0.3)
+    mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.7)
-    nokogiri (1.11.1-x86_64-linux)
+    nokogiri (1.11.2)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -237,6 +243,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
