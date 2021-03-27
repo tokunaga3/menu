@@ -128,3 +128,9 @@ header a{
     width: 100%;
     height:9vh;
   }
+
+  /* edit_family_list */
+  .edit_family_list{
+    text-align: right;
+    /* background-color: red; */
+  }
