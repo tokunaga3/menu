@@ -1,9 +1,11 @@
 // うまくいかない(destoy)
-// $("#modal-"+"<%= @menu_list.id %>").modal('hide');
-// $('.show_menu').html("<%= escape_javascript(render 'menu_list_show', menu_lists: @menu_lists, families: @families ) %>");
+$("#modal-"+"<%= @menu_list.id %>").modal('hide');
+$("#modal-e"+"<%= @menu_list.id %>").modal('hide');
+$('.show_menu').html("<%= escape_javascript(render 'menu_list_show', menu_lists: @menu_lists, families: @families ) %>");
+$(".modal-backdrop").remove();
+$("body").removeClass("modal-open");
 //
 
 // うまくいかない(update)
-// $("#modal-e"+"<%= @menu_list.id %>").modal('hide');
 // $("#modal-"+"<%= @menu_list.id %>").modal('hide');
 // $('.show_menu').html("<%= escape_javascript(render 'menu_list_show', menu_lists: @menu_lists, families: @families ) %>");
