@@ -137,8 +137,9 @@ header a{
     background    : #ffffff;
     border        : 1px solid #7f007f;
     border-radius : 5%;
+    height: 38px;
   }
   .edit_family_list_button:hover {
   color         : #ffffff;
-  background    : #7f007f;     
+  background    : #7f007f;
 }
