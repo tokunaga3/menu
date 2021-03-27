@@ -2,9 +2,9 @@ class MenuListsController < ApplicationController
   before_action :authenticate_user!
   before_action :user_signed_in?
   before_action :set_menu_list, only: [:edit, :update, :destroy]
-  before_action :set_family, only: [:show, :index, :edit, :update]
+  before_action :set_family, only: [:show, :index, :edit, :update, :destroy]
   before_action :set_menu_family, only: [:show, :index]
-  before_action :set_menu_lists, only: [:show, :update]
+  before_action :set_menu_lists, only: [:show, :update, :destroy]
 
 
   PER = 8
@@ -27,19 +27,26 @@ class MenuListsController < ApplicationController
   def update
      respond_to do |format|
       if @menu_list.update(menu_list_params)
+        flash.now[:notice] = '更新できました'
         format.js { render :update }
-        # redirect_to menu_list_path, notice:"#{@menu_list.menu_name}を更新しました！"
       else
-        redirect_to menu_list_path, notice:"#{@menu_list.menu_name}を更新できませんでした！"
+        flash.now[:notice] = '更新できませんでした'
+        format.js { render :update }
+        # redirect_to menu_list_path, notice:"#{@menu_list.menu_name}を更新できませんでした！"
       end
     end
   end
 
   def destroy
-    if @menu_list.destroy
-      redirect_to menu_list_path, notice:"#{@menu_list.menu_name}を削除しました！"
-    else
-      redirect_to menu_list_path, notice:"削除できませんでした！"
+    respond_to do |format|
+      if @menu_list.destroy
+        flash.now[:notice] = '削除しました'
+        format.js { render :destroy }
+      else
+        flash.now[:notice] = '削除できませんでした'
+        format.js { render :destroy }
+        # redirect_to menu_list_path, notice:"削除できませんでした！"
+      end
     end
   end
 
