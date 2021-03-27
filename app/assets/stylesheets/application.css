@@ -130,7 +130,15 @@ header a{
   }
 
   /* edit_family_list */
-  .edit_family_list{
-    text-align: right;
-    /* background-color: red; */
+  .edit_family_list_button{
+    margin-right: 2rem;
+    margin-top: 1rem;
+    color         : #7f007f;
+    background    : #ffffff;
+    border        : 1px solid #7f007f;
+    border-radius : 5%;
   }
+  .edit_family_list_button:hover {
+  color         : #ffffff;
+  background    : #7f007f;     
+}
