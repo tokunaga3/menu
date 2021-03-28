@@ -1,4 +1,4 @@
-<%= form_with(model: @family, local: true) do |form| %>
+<%= form_with(model: @family, remote: true) do |form| %>
   <% if @family.errors.any? %>
     <div id="error_explanation">
       <h2><%= @family.errors.count %>件のエラーがあります。</h2>

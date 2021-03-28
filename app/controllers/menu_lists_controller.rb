@@ -2,7 +2,7 @@ class MenuListsController < ApplicationController
   before_action :authenticate_user!
   before_action :user_signed_in?
   before_action :set_menu_list, only: [:edit, :update, :destroy]
-  before_action :set_family, only: [:show, :index, :edit, :update, :destroy]
+  before_action :current_families, only: [:show, :index, :edit, :update, :destroy]
   before_action :set_menu_family, only: [:show, :index]
   before_action :set_menu_lists, only: [:show, :update, :destroy]
 
@@ -77,10 +77,6 @@ class MenuListsController < ApplicationController
 
     def set_menu_list
       @menu_list = MenuList.find(params[:id])
-    end
-
-    def set_family
-      @families = Family.where(user_id:current_user.id)
     end
 
     def set_menu_lists

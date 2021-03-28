@@ -1,3 +1,6 @@
 $("textarea").val("");
 $("input").val("");
 $('#exampleModalLong').modal('hide');
+$("#exampleModal").replaceWith("<%= j render 'menu_lists/add_menu_form', family:@families %>");
+
+// $("#f<%= @family.id %>").replaceWith("<%= j render 'families/family_form', family:@family %>");

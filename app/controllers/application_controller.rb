@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
    @family = Family.new
  end
 
+ def current_families
+   @families = Family.where(user_id:current_user.id)
+ end
+
   protected
 
   def configure_permitted_parameters

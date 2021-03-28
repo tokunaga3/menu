@@ -6,6 +6,7 @@ class FamiliesController < ApplicationController
     @family.user_id = current_user.id
     respond_to do |format|
       if @family.save
+        @families = Family.where(user_id:current_user.id)
         format.js { render :index }
       else
         format.html { redirect_to menu_lists_path,notice: "家族の名前を追加できませんでした" }
