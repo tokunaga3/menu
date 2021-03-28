@@ -5,4 +5,6 @@ class Family < ApplicationRecord
   has_many :menu_lists, through: :menu_families
   validates:family_name,presence: true
 
+  scope :current_families_name, -> (user_id) { where(user_id:(user_id)) }
+
 end
