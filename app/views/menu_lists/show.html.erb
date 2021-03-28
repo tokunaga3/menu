@@ -1,14 +1,14 @@
-<!-- Button trigger modal -->
+<!-- edit_family_list_button -->
 <div class="container">
   <div class="text-right row">
-    <button type="button" class="edit_family_list_button offset-5 col-6 offset-md-10 col-md-2" data-toggle="modal" data-target="#exampleModalLong">
+    <button type="button" class="edit_family_list_button offset-5 col-6 offset-md-10 col-md-2" data-toggle="modal" data-target="#edit_family_list_modal">
       Edit_family_list
     </button>
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<!-- edit_family_list_button Modal -->
+<div class="modal fade" id="edit_family_list_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -18,7 +18,18 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <table>
+          <% @families.each_with_index do |families, ids|%>
+            <tr>
+              <td><%= families.family_name %></td>
+              <td><%= link_to "編集", edit_family_path(families), remote: true %></td>
+              <td><%= link_to "削除", family_path(families),method: :delete, remote: true, data: {confirm: "#{families.family_name}の名前を削除しますか？"} %></td>
+              <%#= link_to "編集", edit_menu_list_path(menu_list), remote: true,
+              class:"btn btn-block btn-outline-secondary d-flex align-items-center edit_button", "data-toggle" => "modal", 'data-target' => '#modal-e#{menu_list.id}'%>
+            </tr>
+          <% end %>
+        </table>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
