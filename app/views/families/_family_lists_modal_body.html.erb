@@ -1,13 +1,15 @@
-<table>
-  <% @families.each_with_index do |families, ids|%>
-    <tr>
-      <td>
-        <div id="f<%= families.id %>"">
-          <%= families.family_name %>
-        </div>
-      </td>
-      <td><%= link_to "編集", edit_family_path(families), remote: true %></td>
-      <td><%= link_to "削除", family_path(families),method: :delete, remote: true, data: {confirm: "#{families.family_name}の名前を削除しますか？"} %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="modal-body">
+  <table>
+    <% @families.each_with_index do |families, ids|%>
+      <tr>
+        <td>
+          <div id="f<%= families.id %>"">
+            <%= families.family_name %>
+          </div>
+        </td>
+        <td><%= link_to "編集", edit_family_path(families), remote: true %></td>
+        <td><%= link_to "削除", family_path(families),method: :delete, remote: true, data: {confirm: "#{families.family_name}の名前を削除しますか？"} %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
