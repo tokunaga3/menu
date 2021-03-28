@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-  before_action :set_family, only: [:show, :edit, :update, :destroy]
+  before_action :set_family, only: [:show, :edit, :destroy, :update]
 
   def create
     @family = Family.new(family_params)
@@ -18,6 +18,17 @@ class FamiliesController < ApplicationController
     respond_to do |format|
       flash.now[:notice] = '編集中'
       format.js { render :edit }
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @family.update(family_params)
+        @families = Family.current_families_name(current_user.id)
+        format.js { render :update }
+      else
+        redirect_to menu_lists_path,notice: "家族の名前を更新できませんでした"
+      end
     end
   end
 
