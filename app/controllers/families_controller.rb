@@ -13,6 +13,16 @@ class FamiliesController < ApplicationController
     end
   end
 
+  def edit
+    respond_to do |format|
+      flash.now[:notice] = '編集中'
+      format.js { render :edit }
+    end
+  end
+
+  def destroy
+  end
+
   private
   def family_params
     params.require(:family).permit( :family_name)

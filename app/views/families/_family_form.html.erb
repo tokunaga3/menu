@@ -1,0 +1,15 @@
+<%= form_with(model: @family, local: true) do |form| %>
+  <% if @family.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @family.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @family.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <td><%= form.text_field :family_name %></td>
+    <td><%= form.submit "更新"%></td>
+
+<% end %>
