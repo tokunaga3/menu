@@ -82,4 +82,5 @@ class MenuListsController < ApplicationController
     def set_menu_lists
       @menu_lists = current_user.menu_lists.page(params[:page]).per(PER)
     end
+
 end

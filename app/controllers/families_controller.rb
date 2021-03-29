@@ -1,5 +1,6 @@
 class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :destroy, :update]
+  before_action :current_families, only: [:update, :edit]
 
   def create
     @family = Family.new(family_params)
@@ -16,6 +17,7 @@ class FamiliesController < ApplicationController
 
   def edit
     respond_to do |format|
+      # @family_list_number = Family.current_families_name(current_user.id).pluck(:family_name).index(@family[:family_name])
       flash.now[:notice] = '編集中'
       format.js { render :edit }
     end
@@ -33,6 +35,17 @@ class FamiliesController < ApplicationController
   end
 
   def destroy
+    respond_to do |format|
+      if @family.destroy
+        @families = Family.current_families_name(current_user.id)
+        flash.now[:notice] = '削除しました'
+        format.js { render :destroy }
+      else
+        flash.now[:notice] = '削除できませんでした'
+        format.js { render :destroy }
+        # redirect_to menu_list_path, notice:"削除できませんでした！"
+      end
+    end
   end
 
   private
