@@ -140,6 +140,27 @@ header a{
     height: 38px;
   }
   .edit_family_list_button:hover {
-  color         : #ffffff;
-  background    : #7f007f;
+    color         : #ffffff;
+    background    : #7f007f;
 }
+
+  .family_name_lists{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  table.family_lists_table{
+    table-layout:fixed;
+    width: 100%;
+  }
+  .edit_or_delete_modal_header{
+    background-color: rgb(42, 195, 39);
+    color: white;
+  }
+  .family_edit_or_delete_button{
+    white-space: nowrap;
+    width:100%;
+  }
+  .family_edit_or_delete_button a{
+    /* display: table; */
+  }
