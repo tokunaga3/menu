@@ -9,7 +9,11 @@
       </ul>
     </div>
   <% end %>
-    <td><%= form.text_field :family_name %></td>
-    <td><%= form.submit "更新"%></td>
+  <tr class="row">
+    <td colspan="3" col-9>
+      <%= form.text_field :family_name %>
+      <%= form.submit "更新"%>
+    </td>
+  </tr>
 
 <% end %>
