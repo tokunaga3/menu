@@ -7,8 +7,6 @@ class MenuListsController < ApplicationController
   before_action :set_menu_lists, only: [:show, :update, :destroy]
 
 
-  PER = 8
-
   def index
     @menu_lists = current_user.menu_lists
   end
@@ -77,10 +75,6 @@ class MenuListsController < ApplicationController
 
     def set_menu_list
       @menu_list = MenuList.find(params[:id])
-    end
-
-    def set_menu_lists
-      @menu_lists = current_user.menu_lists.page(params[:page]).per(PER)
     end
 
 end

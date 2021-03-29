@@ -1,11 +1,19 @@
 <div class="modal-body" id="edit_destroy_modal">
   <table>
+    <tr>
+      <th></th>
+      <th>登録メニュー数</th>
+
+    </tr>
     <% @families.each_with_index do |families, ids|%>
       <tr>
         <td>
-          <div id="f<%= families.id %>"">
+          <div id="f<%= families.id %>">
             <%= families.family_name %>
           </div>
+        </td>
+        <td>
+          <%=  @menu_lists.where(family_id:families.id).count %>
         </td>
         <td><%= link_to "編集", edit_family_path(families), remote: true %></td>
         <td><%= link_to "削除", family_path(families),method: :delete, remote: true, data: {confirm: "#{families.family_name}の名前を削除しますか？"} %></td>

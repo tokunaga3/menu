@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
    @families = Family.where(user_id:current_user.id)
  end
 
+ def set_menu_lists
+   per = 8
+   @menu_lists = current_user.menu_lists.page(params[:page]).per(per)
+ end
+
   protected
 
   def configure_permitted_parameters

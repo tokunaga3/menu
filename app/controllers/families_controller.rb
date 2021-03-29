@@ -1,6 +1,7 @@
 class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :destroy, :update]
   before_action :current_families, only: [:update, :edit]
+  before_action :set_menu_lists, only: [:update, :edit, :destroy]
 
   def create
     @family = Family.new(family_params)
@@ -56,5 +57,6 @@ class FamiliesController < ApplicationController
   def set_family
     @family = Family.find(params[:id])
   end
+
 
 end
