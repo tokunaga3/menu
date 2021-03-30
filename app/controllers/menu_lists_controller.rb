@@ -4,7 +4,7 @@ class MenuListsController < ApplicationController
   before_action :set_menu_list, only: [:edit, :update, :destroy]
   before_action :current_families, only: [:show, :index, :edit, :update, :destroy]
   before_action :set_menu_family, only: [:show, :index]
-  before_action :set_menu_lists, only: [:show, :update, :destroy]
+  before_action :set_menu_lists_page, only: [:show, :update, :destroy]
 
 
   def index
@@ -13,6 +13,7 @@ class MenuListsController < ApplicationController
 
 
   def show
+    set_menu_lists
   end
 
   def edit

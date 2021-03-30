@@ -19,8 +19,13 @@ class ApplicationController < ActionController::Base
  end
 
  def set_menu_lists
+   @menu_lists_all = current_user.menu_lists
+ end
+
+ def set_menu_lists_page
+   set_menu_lists
    per = 8
-   @menu_lists = current_user.menu_lists.page(params[:page]).per(per)
+   @menu_lists = @menu_lists_all.page(params[:page]).per(per)
  end
 
   protected
