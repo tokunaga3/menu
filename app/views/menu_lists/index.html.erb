@@ -3,16 +3,28 @@
 </div>
 
 <!--表示されるメニュー -->
-<div class="container">
-  <div id="vue_main" class="row">
-    <div v-show="show" class="offset-md-4 col-md-4">
-      <div class="randam_menu">
-        <%= render "randam_menu" , menu_list: @menu_lists %>
+<% if @menu_lists.present? %>
+  <div class="container">
+    <div id="vue_main" class="row">
+      <div v-show="show" class="offset-md-4 col-md-4">
+        <div class="randam_menu">
+          <%= render "randam_menu" , menu_list: @menu_lists %>
+        </div>
       </div>
+      <button v-show="button" @click="click" class="btn btn-outline-success btn-lg btn-block offset-4 col-4" id="menu_switch">メニューを決める</button>
+<% else %>
+   <div class="container text-center">
+     <div class="row card">
+       <div class="text-left back_main offset-md-4 col-md-4 offset-2 col-8 card-body">
+           <p><strong>1.</strong>「Add family_name」で家族名を追加してください</p>
+           <p><strong>2.</strong>「Add menu」でメニューを登録してください</p>
+           <p><strong>3.</strong>ページを再読み込みして利用開始できます</p>
+       </div>
+     </div>
+   </div>
+<% end %>
     </div>
-    <button v-show="button" @click="click" class="btn btn-outline-success btn-lg btn-block offset-4 col-4" id="menu_switch">メニューを決める</button>
   </div>
-</div>
 
 <script>
     new Vue({

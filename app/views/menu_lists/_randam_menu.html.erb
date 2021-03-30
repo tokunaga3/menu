@@ -1,14 +1,6 @@
-<% if @menu_lists.present? %>
-    <% randam_menu = @menu_lists.offset(rand(@menu_lists.count)).first %>
-  <div class="main">
-    <p class="menu_name"><%= randam_menu.menu_name %></p>
-     <p><%= image_tag randam_menu.image.url, :size =>'300x300' %></p>
-     <button type="button" id="menu_button" class="btn btn-success"><%= link_to "メニューを決める",randam_menu_menu_list_path(@menu_lists), remote: true %></button>
-   </div>
-<% else %>
-   <ol class="back_main">
-     <li>「Add family_name」で家族名を追加</li>
-     <li>「Add menu」でメニューを登録。</li>
-    <li>利用開始</li>
-   </ol>
-<% end %>
+<% make_randam_menu(@menu_lists) %>
+<div class="main">
+  <p class="menu_name"><%= @randam_menu.menu_name %></p>
+  <p><%= image_tag @randam_menu.image.url, :size =>'300x300' %></p>
+  <button type="button" id="menu_button" class="btn btn-success"><%= link_to "メニューを決める",randam_menu_menu_list_path(@menu_lists), remote: true %></button>
+</div>
