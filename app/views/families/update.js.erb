@@ -1,2 +1,6 @@
 $(".family_lists").replaceWith("<%= j render 'families/family_lists_modal_body', families: @families,  menu_lists: @menu_lists %>");
 $('#edit_destroy_modal').wrap('<div class="family_lists">');
+//
+$("#exampleModal").replaceWith("<%= j render 'menu_lists/add_menu_form', family:@families %>");
+// $("#exampleModal").replaceWith("<%= j render 'families/family_lists_modal_body', families: @families,  menu_lists: @menu_lists %>");
+// $('#edit_destroy_modal').wrap('<div class="family_lists">');
