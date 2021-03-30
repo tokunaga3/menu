@@ -14,19 +14,19 @@
     <link rel="stylesheet" type="text/css" href="http://mplus-fonts.sourceforge.jp/webfonts/general-j/mplus_webfonts.css">
   </head>
 
-  <body>
+  <body class='<%= controller.controller_name %>'>
     <% if user_signed_in? %>
-    <header>
-      <nav class="container-fluid menu_header">
-        <div class="row">
-          <div class="col-12 col-md-4  col-lg-4 text-center text-md-left current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
-          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModalLong"><button class="btn btn-link">Add family_name</button></div>
-          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-link">Add menu</button></div>
-          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link"><%= link_to "Menu list",menu_list_path(current_user) %></button></div>
-          <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button></div>
-      </div>
-      </nav>
-    </header>
+      <header>
+        <nav class="container-fluid menu_header">
+          <div class="row">
+            <div class="col-12 col-md-4  col-lg-4 text-center text-md-left current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModalLong"><button class="btn btn-link">Add family_name</button></div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-link">Add menu</button></div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link"><%= link_to "Menu list",menu_list_path(current_user) %></button></div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button></div>
+        </div>
+        </nav>
+      </header>
     <% end %>
 
     <% flash.each do |key, value| %>

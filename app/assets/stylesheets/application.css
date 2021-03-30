@@ -164,3 +164,8 @@ header a{
   .family_edit_or_delete_button a{
     /* display: table; */
   }
+
+/* ログイン画面 */
+.sessions{
+  background-color: rgb(111 176 218 / 44%);
+}
