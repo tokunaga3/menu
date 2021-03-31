@@ -167,7 +167,8 @@ header a{
 
 /* ログイン画面 */
 .sessions{
-  background-color: rgb(111 176 218 / 44%);
+  /* background-color: rgb(111 176 218 / 44%); */
+  background-color: rgb(158, 213, 223);
 }
 
 .new_registrations{
@@ -176,6 +177,6 @@ header a{
 @media screen and (max-width: 460px){
   .new_registrations_image {display:none}
 }
-@media screen and (min-width: 450px){
+@media screen and (min-width: 460px){
   #new_registrations_image {display:none}
 }
