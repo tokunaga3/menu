@@ -169,3 +169,10 @@ header a{
 .sessions{
   background-color: rgb(111 176 218 / 44%);
 }
+
+.new_registrations{
+  margin-top: 130px;
+}
+@media screen and (max-width: 460px){
+  .new_registrations_image {display:none}
+}
