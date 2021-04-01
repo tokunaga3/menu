@@ -1,15 +1,3 @@
-Rails.application.routes.draw do
-  devise_for :users
-  devise_scope :user do
-    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
-  end
-  root "menu_lists#index"
-  resources :menu_lists do
-    get 'randam_menu', :on => :member
-  end
-  resources :families
-end
-
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
@@ -28,10 +16,7 @@ end
 #                           PUT    /users(.:format)                                                                         devise/registrations#update
 #                           DELETE /users(.:format)                                                                         devise/registrations#destroy
 #                           POST   /users(.:format)                                                                         devise/registrations#create
-#                           GET    /user/:id(.:format)                                                                      users/registrations#detail
-#                    signup GET    /signup(.:format)                                                                        users/registrations#new
-#                     login GET    /login(.:format)                                                                         users/sessions#new
-#                    logout GET    /logout(.:format)                                                                        users/sessions#destroy
+#       users_guest_sign_in POST   /users/guest_sign_in(.:format)                                                           users/sessions#new_guest
 #                      root GET    /                                                                                        menu_lists#index
 #     randam_menu_menu_list GET    /menu_lists/:id/randam_menu(.:format)                                                    menu_lists#randam_menu
 #                menu_lists GET    /menu_lists(.:format)                                                                    menu_lists#index
@@ -55,3 +40,15 @@ end
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
 # update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+
+Rails.application.routes.draw do
+  devise_for :users
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+  root "menu_lists#index"
+  resources :menu_lists do
+    get 'randam_menu', :on => :member
+  end
+  resources :families
+end

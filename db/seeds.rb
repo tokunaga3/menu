@@ -32,4 +32,3 @@
       family_id: @randam_guest_family.id,
                  )
   end
-# end
