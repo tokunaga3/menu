@@ -169,7 +169,10 @@ header a{
 .sessions{
   background-color: rgb(158, 213, 223);
 }
-
+#start_button{
+  font-size: 6vw;
+  width:100%;
+}
 .new_registrations{
   margin-top: 130px;
 }
