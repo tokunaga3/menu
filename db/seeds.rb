@@ -11,7 +11,7 @@
   user_name = User.where(name:"Guest")
   user_id = user_name.ids[0]
 
-  @set_guest_family = ["息子","娘","母","父"]
+  @set_guest_family = ["ルフィ","ナミ","ウソップ","ゾロ","ロビン","ブルック","チョッパー","ジンベエ","フランキー","サンジ"]
 
   @set_guest_family.each do |guest_family|
     Family.create!(
@@ -22,10 +22,10 @@
 
   @guest_menu_list = ["オムライス","チキン南蛮","カレー","シチュー","ハヤシライス","親子丼","カルボナーラ","唐揚げ","すき焼き","お好み焼き"]
   @guest_families = Family.where(user_id:user_id)
-  @randam_guest_family = @guest_families.offset(rand(3)).first
 
 
   @guest_menu_list.each do |guest_menu_list|
+    @randam_guest_family = @guest_families.offset(rand(3)).first
     MenuList.create!(
       menu_name: guest_menu_list,
       user_id: user_id,
