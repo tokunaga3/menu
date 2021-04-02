@@ -13,6 +13,7 @@
 
   @set_guest_family = ["ルフィ","ナミ","ウソップ","ゾロ","ロビン","ブルック","チョッパー","ジンベエ","フランキー","サンジ"]
 
+  # ゲストの家族を設定
   @set_guest_family.each do |guest_family|
     Family.create!(
       family_name: guest_family,
@@ -20,18 +21,19 @@
     )
   end
 
-  # @guest_menu_list = ["オムライス","チキン南蛮","カレー","シチュー","ハヤシライス","親子丼","カルボナーラ","唐揚げ","すき焼き","お好み焼き"]
   @guest_menu_list = { "オムライス":"./public/imaage/omurasu.png","チキン南蛮":"./public/imaage/food_chicken_nanban.png","カレー":"./public/imaage/curry.png","シチュー":"./public/imaage/stew.png","ハヤシライス":"./public/imaage/hayashi_rice.png","親子丼":"./public/imaage/food_oyakodon.png","カルボナーラ":"./public/imaage/carbonara.png","唐揚げ":"./public/imaage/food_karaage_cup.png","すき焼き":"./public/imaage/food_sukiyaki.png","お好み焼き":"./public/imaage/okonomiyaki.png" }
-  # { first_name: "Yusuke", last_name: "Higaki" }
+
+  # ゲストさんのご家族を探している
   @guest_families = Family.where(user_id:user_id)
 
+  @guest_family_count = @set_guest_family.length-1
 
   @guest_menu_list.each do |guest_menu_list,image|
-    @randam_guest_family = @guest_families.offset(rand(3)).first
+    @randam_guest_family = @guest_families.offset(rand(@guest_family_count)).first
     MenuList.create!(
       menu_name: guest_menu_list,
       user_id: user_id,
       family_id: @randam_guest_family.id,
-      image:File.open(image),
+      # image:File.open(image), #herokuでは画像のseedは反映されないようだ
                  )
   end
