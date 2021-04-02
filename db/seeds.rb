@@ -34,6 +34,6 @@
       menu_name: guest_menu_list,
       user_id: user_id,
       family_id: @randam_guest_family.id,
-      image:File.open(image), #herokuでは画像のseedは反映されないようだ
+      #image:File.open(image),    #herokuでは画像のseedは反映されないようだ
                  )
   end
