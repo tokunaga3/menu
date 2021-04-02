@@ -28,6 +28,12 @@ class ApplicationController < ActionController::Base
    @menu_lists = @menu_lists_all.page(params[:page]).per(per)
  end
 
+ def guest_check
+   if  current_user[:name] =="Guest"
+     redirect_to menu_lists_path,notice: "ゲストアカウントではこの操作はできません"
+   end
+ end
+
   protected
 
   def configure_permitted_parameters
