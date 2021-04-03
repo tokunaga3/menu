@@ -7,6 +7,7 @@
       <th class="col-2"></th>
     </tr>
     <% @families.each_with_index do |families, ids|%>
+    <% @this_menu_count = @menu_lists_all.where(family_id:families.id).count %>
     <div id="f1"></div>
       <tr class="row">
           <td class="col-4 pl-4 family_name_lists">
@@ -15,10 +16,10 @@
             </div>
           </td>
           <td class="text-center col-2 col-md-4">
-            <%=  @menu_lists_all.where(family_id:families.id).count %>
+            <%=  @this_menu_count %>
           </td>
           <td class="col-3 col-md-2 family_edit_or_delete_button"><%= link_to "編集", edit_family_path(families), remote: true, class:"btn btn-outline-info" %></td>
-          <td class="col-2 family_edit_or_delete_button"><%= link_to "削除", family_path(families),method: :delete, remote: true, data: {confirm: "#{families.family_name}の名前を削除しますか？"},class:"btn btn-outline-danger" %></td>
+          <td class="col-2 family_edit_or_delete_button"><%= link_to "削除", family_path(families,this_menu: @this_menu_count),method: :delete, remote: true, data: {confirm: "#{families.family_name}の名前を削除しますか？"},class:"btn btn-outline-danger" %></td>
       </tr>
     <% end %>
   </table>

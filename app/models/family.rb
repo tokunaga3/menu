@@ -26,4 +26,5 @@ class Family < ApplicationRecord
   # ログインユーザーの登録されている家族を探す
   scope :current_families_name, -> (user_id) { where(user_id:(user_id)) }
 
+
 end

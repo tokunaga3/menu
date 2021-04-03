@@ -34,6 +34,12 @@ class ApplicationController < ActionController::Base
    end
  end
 
+ def menu_count_check
+   if params[:this_menu].to_i >= 1
+     redirect_to menu_list_path, notice: "この人が投稿したメニューが存在するので消すことはできません。削除するにはこの人の投稿したメニューを０にしてください。"
+   end
+ end
+
   protected
 
   def configure_permitted_parameters
