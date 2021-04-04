@@ -79,7 +79,10 @@ header a{
     margin-bottom: 10rem;
     font-family: 'M+ Type-1 (general-j) Black';
   }
-
+/* add_menuモーダル */
+#menu_list_image{
+  padding-left: 0;
+}
 /* show */
   table.show_table{
     text-align: center;
@@ -128,6 +131,7 @@ header a{
     width: 100%;
     height:9vh;
   }
+
 
   /* edit_family_list */
   .edit_family_list_button{
