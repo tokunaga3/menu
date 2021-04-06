@@ -64,6 +64,24 @@ header a{
   #menu_button a{
    color: white;
   }
+  /* ツールチップ */
+  span.comment{
+    width: 200px;
+    height: 40px;
+    background: rgb(181, 181, 181);
+    color: white;
+    padding-top: 7px;
+    padding-left:5px;
+    font-size: large;
+    text-align: left;
+    white-space: nowrap;
+  }
+  span.comment_show{
+  height: 110px;
+  padding-left: 10px;
+  width:175px;
+  z-index: 9999;
+}
 
   /* フラッシュメッセージ */
   .notice {

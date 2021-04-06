@@ -20,9 +20,9 @@
         <nav class="container-fluid menu_header">
           <div class="row">
             <div class="col-12 col-md-4  col-lg-4 text-center text-md-left current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
-            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModalLong"><button class="btn btn-link">Add family_name</button></div>
-            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-link">Add menu</button></div>
-            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link"><%= link_to "Menu list",menu_list_path(current_user) %></button></div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModalLong"><button class="btn btn-link tool">Add family_name</button><span class="comment">家族名を追加します</span></div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-link  tool">Add menu</button><span class="comment">メニューを追加します</span></div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link  tool"><%= link_to "Menu list",menu_list_path(current_user) %></button><span class="comment comment_show">登録している<br>メニューの一覧を<br>表示します</span></div>
             <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button></div>
         </div>
         </nav>
@@ -38,3 +38,21 @@
     <% end %>
   </body>
 </html>
+
+<!-- // ツールチップ -->
+<script>
+  $("span.comment").css({
+    position:"absolute",
+    display:"none"
+  })
+
+  $(".tool").mouseover(function(){
+    $(this).next("span.comment").fadeIn().css({
+      "top":$(this).offset().top+30+"px",
+      // "left":$(this).offset().left-10+"px"
+    });
+  }).mouseout(function(){
+    $(this).next("span.comment").fadeOut();
+  });
+
+</script>
