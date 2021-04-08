@@ -18,7 +18,10 @@
             </td>
             <td class="col-md-4 d-flex align-items-center justify-content-center"><%= image_tag menu_list.image.url, class:"img-fluid" ,alt:"Responsive image" %></td>
             <td class="col-md-3 d-flex align-items-center justify-content-center"><%= @this_menu.family_name %></td>
-            <td class="col-md-1"><button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#modal-<%= menu_list.id %>">・・・</button></td>
+            <td class="col-md-1">
+              <button type="button" class="btn btn-outline-light tool3" data-toggle="modal" data-target="#modal-<%= menu_list.id %>">・・・</button>
+              <span class="comment menu_comment">メニューの管理ができます</span>
+            </td>
         </tr>
       </tfoot>
 

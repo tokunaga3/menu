@@ -81,7 +81,13 @@ header a{
   padding-left: 10px;
   width:175px;
   z-index: 9999;
-}
+  }
+  span.edit_family_list_comment{
+    width: 300px;
+  }
+  span.menu_comment{
+    width: 230px;
+  }
 
   /* フラッシュメッセージ */
   .notice {

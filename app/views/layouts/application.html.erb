@@ -45,7 +45,8 @@
     position:"absolute",
     display:"none"
   })
-
+  
+// hedderの説明
   $(".tool").mouseover(function(){
     $(this).next("span.comment").fadeIn().css({
       "top":$(this).offset().top+30+"px"
@@ -54,4 +55,22 @@
     $(this).next("span.comment").fadeOut();
   });
 
+// edit_familyの説明
+  $(".tool2").mouseover(function(){
+    $(this).next("span.comment").fadeIn().css({
+      "top":$(this).offset().top+40+"px",
+      "left":$(this).offset().left-20+"px"
+    });
+  }).mouseout(function(){
+    $(this).next("span.comment").fadeOut();
+  });
+
+// menu_listの三点リーダ―の説明
+  $(".tool3").mouseover(function(){
+    $(this).next("span.comment").fadeIn().css({
+      "top":45+"px",
+    });
+  }).mouseout(function(){
+    $(this).next("span.comment").fadeOut();
+  });
 </script>
