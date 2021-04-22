@@ -2,7 +2,7 @@ class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :destroy, :update]
   before_action :current_families, only: [:update, :edit]
   before_action :set_menu_lists_page, only: [:update, :edit, :destroy]
-  before_action :guest_check, only: [:update, :create, :destroy]
+  # before_action :guest_check, only: [:update, :create, :destroy]
   before_action :menu_count_check, only: [:destroy]
 
   def create
