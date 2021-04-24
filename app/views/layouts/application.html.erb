@@ -20,11 +20,21 @@
       <header>
         <nav class="container-fluid menu_header">
           <div class="row">
-            <div class="col-12 col-md-4  col-lg-4 text-center text-md-left current_user_name"><%= link_to "#{current_user.name}'s page", root_path %></div>
-            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModalLong"><button class="btn btn-link tool">Add family_name</button><span class="comment">家族名を追加します</span></div>
-            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-link  tool">Add menu</button><span class="comment">メニューを追加します</span></div>
-            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link  tool"><%= link_to "Menu list",menu_list_path(current_user) %></button><span class="comment comment_show">登録している<br>メニューの一覧を<br>表示します</span></div>
-            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right"><button class="btn btn-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button></div>
+            <div class="col-12 col-md-4  col-lg-4 text-center text-md-left current_user_name">
+              <%= link_to "#{current_user.name}'s page", root_path %>
+            </div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModalLong">
+              <button class="btn btn-link tool">Add family_name</button><span class="comment">家族名を追加します</span>
+            </div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right" data-toggle="modal" data-target="#exampleModal">
+              <button class="btn btn-link tool">Add menu</button><span class="comment">メニューを追加します</span>
+            </div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right">
+              <button class="btn btn-link"><%= link_to "Menu list",menu_list_path(current_user),class: "tool" %><span class="comment comment_show">登録している<br>メニューの一覧を<br>表示します</span></button>
+            </div>
+            <div class="col-12 col-md-1 col-lg-2 text-center text-md-right hedder_right">
+              <button class="btn btn-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+            </div>
         </div>
         </nav>
       </header>
