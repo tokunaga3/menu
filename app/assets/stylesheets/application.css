@@ -136,6 +136,7 @@ header a{
     .table_head {display:none}
   }
 
+
   .edit_button {
     display: block;
     width: 100%;
@@ -157,7 +158,6 @@ header a{
   }
 
 
-  /* edit_family_list */
   .edit_family_list_button{
     margin-right: 2rem;
     margin-top: 1rem;
@@ -203,6 +203,13 @@ header a{
 }
 .new_registrations{
   margin-top: 130px;
+}
+
+/* スライド */
+.slidese{
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+
 }
 /* サインアップ画面 */
 @media screen and (max-width: 460px){
