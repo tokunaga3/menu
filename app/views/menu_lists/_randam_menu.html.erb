@@ -2,5 +2,5 @@
 <div class="main">
   <p class="menu_name"><%= @randam_menu.menu_name %></p>
   <p><%= image_tag @randam_menu.image.url, :size =>'300x300' %></p>
-  <button type="button" id="menu_button" class="btn btn-success"><%= link_to "メニューを決める",randam_menu_menu_list_path(@menu_lists), remote: true %></button>
+  <button type="button" id="menu_button" class="btn btn-success"><%= link_to "他のメニューにする",randam_menu_menu_list_path(@menu_lists), remote: true %></button>
 </div>
