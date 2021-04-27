@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="http://mplus-fonts.sourceforge.jp/webfonts/general-j/mplus_webfonts.css">
     <%= analytics_init if Rails.env.production? %>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9438975233591786"
-     crossorigin="anonymous"></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9438975233591786"
+     crossorigin="anonymous"></script> -->
   </head>
 
   <body class='<%= controller.controller_name %>'>
@@ -50,6 +50,9 @@
       <p><%= link_to '戻る', 'javascript:history.back()' %></p>
     <% end %>
   </body>
+  <footer>
+    <a href="https://policies.google.com/technologies/ads?hl=ja">こちら</a>
+  </footer>
 </html>
 
 <!-- // ツールチップ -->
