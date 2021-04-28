@@ -232,6 +232,7 @@ header a{
 .button_simple:hover {
     background-color: #cc0000;
     color: #fff;
+    box-shadow: 0 0px 0 rgba(0, 0.3);
     animation-play-state: paused;
     top: 3px;
 }
