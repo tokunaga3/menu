@@ -229,8 +229,6 @@ header a{
     color: #eeee22;/*アイコンの色*/
     margin-right: 3px;
 }
-.button_simple:hover {
-}
 .pekopeko {
     animation: pekopeko 2s infinite;
     box-shadow: 0 3px 0 rgb(0, 0.3);
