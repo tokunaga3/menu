@@ -232,25 +232,25 @@ header a{
 .button_simple:hover {
     background-color: #cc0000;
     color: #fff;
-    box-shadow: 0 0px 0 rgb(0, 0, 1);
+    box-shadow: 0 0px 0 rgb(0, 0.3);
     animation-play-state: paused;
     top: 3px;
 }
 .pekopeko {
     animation: pekopeko 2s infinite;
-    box-shadow: 0 3px 0 rgb(0, 0, 1);
+    box-shadow: 0 3px 0 rgb(0, 0.3);
 }
 @keyframes pekopeko {
     0% {
-        box-shadow: 0 3px 0 rgb(0, 0, 1);
+        box-shadow: 0 3px 0 rgb(0, 0.3);
         top: 0px;
     }
     10% {
-        box-shadow: 0 0 0 rgb(0, 0, 1);
+        box-shadow: 0 0 0 rgb(0, 0.3);
         top: 3px;
     }
     20% {
-        box-shadow: 0 3px 0 rgb(0, 0, 1);
+        box-shadow: 0 3px 0 rgb(0, 0.3);
         top: 0px;
     }
     30% {
