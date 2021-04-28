@@ -210,7 +210,9 @@ header a{
   margin: 0 calc(50% - 50vw);
 }
 /* 「これから始める」ボタン */
-.button_simple {
+
+/* 試し */
+/* .button_simple {
   position: relative;
   font-weight: bold;
   padding: 5px 15px;
@@ -221,9 +223,9 @@ header a{
   color: #fff;
   display: inline-block;
   text-shadow: 1px 1px 0px #010000;
-  /* box-shadow: 0 3px 0 rgb(0, 0.3); */
-}
-/* .button_simple {
+  box-shadow: 0 3px 0 rgb(0, 0.3);
+} */
+.button_simple {
     position: relative;
     font-weight: bold;
     padding: 5px 15px;
@@ -233,8 +235,8 @@ header a{
     background-color: #00a41a;
     color: #fff;
     display: inline-block;
-    text-shadow: 1px 1px 0px rgb(0, 0.3);
-    box-shadow: 0 3px 0 rgb(0, 0.3);
+    text-shadow: 1px 1px 0px rgb(0, 0, 0.3);
+    box-shadow: 0 3px 0 rgb(0, 0, 0.3);
 }
 .button_simple:before {
     font-family: FontAwesome;
@@ -245,25 +247,25 @@ header a{
 .button_simple:hover {
     background-color: #cc0000;
     color: #fff;
-    box-shadow: 0 0px 0 rgb(0, 0.3);
+    box-shadow: 0 0px 0 rgb(0, 0, 0.3);
     animation-play-state: paused;
     top: 3px;
 }
 .pekopeko {
     animation: pekopeko 2s infinite;
-    box-shadow: 0 3px 0 rgb(0, 0.3);
+    box-shadow: 0 3px 0 rgb(0, 0, 0.3);
 }
 @keyframes pekopeko {
     0% {
-        box-shadow: 0 3px 0 rgb(0, 0.3);
+        box-shadow: 0 3px 0 rgb(0, 0, 0.3);
         top: 0px;
     }
     10% {
-        box-shadow: 0 0 0 rgb(0, 0.3);
+        box-shadow: 0 0 0 rgb(0, 0, 0.3);
         top: 3px;
     }
     20% {
-        box-shadow: 0 3px 0 rgb(0, 0.3);
+        box-shadow: 0 3px 0 rgb(0, 0, 0.3);
         top: 0px;
     }
     30% {
@@ -291,7 +293,7 @@ header a{
     100% {
         transform: scale(1, 0.8);
     }
-} */
+}
 
 /* サインアップ画面 */
 @media screen and (max-width: 460px){
