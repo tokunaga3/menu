@@ -214,6 +214,12 @@ header a{
   position: relative;
   font-weight: bold;
   padding: 5px 15px;
+  margin: 0px 5px;
+  border-radius: 30px;
+  font-size: 18px;
+  background-color: #00a41a;
+  color: #fff;
+  display: inline-block;
 
 }
 /* .button_simple {
