@@ -225,9 +225,15 @@ header a{
 }
 .button_simple:before {
     font-family: FontAwesome;
-    content: '▷';/*好きなアイコン*/
     color: #eeee22;/*アイコンの色*/
     margin-right: 3px;
+}
+.button_simple:hover {
+    background-color: #cc0000;
+    color: #fff;
+    box-shadow: 0 0px 0 rgba(0, 0.3);
+    animation-play-state: paused;
+    top: 3px;
 }
 .pekopeko {
     animation: pekopeko 2s infinite;
