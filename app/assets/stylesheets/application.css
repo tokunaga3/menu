@@ -210,6 +210,12 @@ header a{
   margin: 0 calc(50% - 50vw);
 }
 /* 「これから始める」ボタン */
+.button_simple {
+  position: relative;
+  font-weight: bold;
+  padding: 5px 15px;
+
+}
 /* .button_simple {
     position: relative;
     font-weight: bold;
