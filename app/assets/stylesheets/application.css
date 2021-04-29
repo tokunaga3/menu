@@ -64,6 +64,9 @@ header a{
   #menu_button a{
    color: white;
   }
+  .main{
+    margin-bottom: 100px;
+  }
   /* ツールチップ */
   span.comment{
     width: 200px;
@@ -210,21 +213,6 @@ header a{
   margin: 0 calc(50% - 50vw);
 }
 /* 「これから始める」ボタン */
-
-/* 試し */
-/* .button_simple {
-  position: relative;
-  font-weight: bold;
-  padding: 5px 15px;
-  margin: 0px 5px;
-  border-radius: 30px;
-  font-size: 18px;
-  background-color: #00a41a;
-  color: #fff;
-  display: inline-block;
-  text-shadow: 1px 1px 0px #010000;
-  box-shadow: 0 3px 0 rgb(0, 0.3);
-} */
 .button_simple {
     position: relative;
     font-weight: bold;
@@ -304,4 +292,12 @@ header a{
 }
 .registrations{
   background-color: rgb(158, 213, 223);
+}
+
+.footer{
+  background-color: black;
+  height: 80px;
+}
+.footer a{
+  color: white;
 }

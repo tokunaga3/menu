@@ -1,6 +1,6 @@
 <br>
 <div id="session_new_vue" class="container">
-  <div  v-show="session_vue">
+  <div  v-show="session_vue" class="mb-5">
     <div class="containeer">
       <div class="row">
         <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class:"btn btn-outline-success offset-md-9 col-md-2 offset-6 col-5", id:"guest_button" %>
@@ -42,7 +42,7 @@
       </div>
     </div>
   </div>
-  <!-- 試しのトップぺージ -->
+  <!-- トップぺージ -->
   <div>
     <%= render "users/sessions/top" %>
   </div>
