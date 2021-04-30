@@ -1,6 +1,6 @@
 class MenuListsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :user_signed_in?
+  before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy, :create]
+  before_action :user_signed_in?, only: [:index, :show, :edit, :update, :destroy, :create]
   before_action :set_menu_list, only: [:edit, :update, :destroy]
   before_action :current_families, only: [:show, :index, :edit, :update, :destroy]
   before_action :set_menu_family, only: [:show, :index]
@@ -64,7 +64,11 @@ class MenuListsController < ApplicationController
   end
 
   def randam_menu
-    @menu_lists = current_user.menu_lists
+    if current_user.nil?
+      @menu_lists = MenuList.where(user_id: User.where(name:"Guest").ids[0])
+    else
+      @menu_lists = current_user.menu_lists
+    end
     respond_to do |format|
       format.js { render :randam_menu }
     end

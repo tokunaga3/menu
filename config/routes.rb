@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :families
   get "other/index" => "others#index"
+  get "user/index" => "users#index"
 end
 
 

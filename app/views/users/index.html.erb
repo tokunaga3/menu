@@ -1,0 +1,26 @@
+  <div class="container main">
+    <div id="vue_main" class="row">
+      <div v-show="show" class="offset-md-4 col-md-4">
+        <div class="randam_menu">
+          <%= render "menu_lists/randam_menu" , menu_list: @menu_lists %>
+        </div>
+      </div>
+      <button v-show="button" @click="click" class="btn btn-outline-success btn-lg btn-block offset-4 col-4" id="menu_switch">メニューを決める</button>
+    </div>
+  </div>
+
+<script>
+    new Vue({
+       el: '#vue_main',
+       data: {
+           show: false,
+           button: true
+       },
+       methods: {
+           click: function () {
+               this.show = !this.show,
+               this.button = !this.button
+           }
+       }
+    });
+</script>
