@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "menu_lists#index"
   resources :menu_lists do
     get 'randam_menu', :on => :member
+    get 'all_menu', :on => :member
   end
   resources :families
   get "other/index" => "others#index"

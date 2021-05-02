@@ -1,3 +1,9 @@
+<p>ようこそゲストさん</p>
+<p>みんなのメニュー</p>
+<%= link_to "all_menu", all_menu_menu_list_path(:user) %><br />
+<%= link_to "ログイン", new_session_path(:user) %><br />
+<%= link_to "新規登録", new_registration_path(:user) %><br />
+
   <div class="container main">
     <div id="vue_main" class="row">
       <div v-show="show" class="offset-md-4 col-md-4">

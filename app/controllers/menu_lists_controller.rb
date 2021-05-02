@@ -74,6 +74,10 @@ class MenuListsController < ApplicationController
     end
   end
 
+  def all_menu
+    @all_menu = MenuList.all.page(params[:page]).per(20)
+  end
+
     private
     def menu_list_params
       params.require(:menu_list).permit( :menu_name, :user_id, :image )
