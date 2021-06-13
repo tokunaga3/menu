@@ -1,19 +1,3 @@
-Rails.application.routes.draw do
-  devise_for :users
-  devise_scope :user do
-    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
-  end
-  root "menu_lists#index"
-  resources :menu_lists do
-    get 'randam_menu', :on => :member
-    get 'all_menu', :on => :member
-  end
-  resources :families
-  get "other/index" => "others#index"
-  get "user/index" => "users#index"
-end
-
-
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
@@ -35,6 +19,7 @@ end
 #       users_guest_sign_in POST   /users/guest_sign_in(.:format)                                                           users/sessions#new_guest
 #                      root GET    /                                                                                        menu_lists#index
 #     randam_menu_menu_list GET    /menu_lists/:id/randam_menu(.:format)                                                    menu_lists#randam_menu
+#        all_menu_menu_list GET    /menu_lists/:id/all_menu(.:format)                                                       menu_lists#all_menu
 #                menu_lists GET    /menu_lists(.:format)                                                                    menu_lists#index
 #                           POST   /menu_lists(.:format)                                                                    menu_lists#create
 #             new_menu_list GET    /menu_lists/new(.:format)                                                                menu_lists#new
@@ -51,8 +36,26 @@ end
 #                           PATCH  /families/:id(.:format)                                                                  families#update
 #                           PUT    /families/:id(.:format)                                                                  families#update
 #                           DELETE /families/:id(.:format)                                                                  families#destroy
+#               other_index GET    /other/index(.:format)                                                                   others#index
+#                user_index GET    /user/index(.:format)                                                                    users#index
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
 # update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+
+Rails.application.routes.draw do
+  devise_for :users
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+  root "menu_lists#index"
+  resources :menu_lists do
+    get 'randam_menu', :on => :member
+    get 'all_menu', :on => :member
+  end
+  resources :families
+  get "other/index" => "others#index"
+  get "user/index" => "users#index"
+end
+

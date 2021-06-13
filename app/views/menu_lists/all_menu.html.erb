@@ -1,5 +1,14 @@
 <% @all_menu.each_with_index do | all_menu | %>
-  <%= all_menu.menu_name %>
-  <p>a</p>
+  <table class="container show_table">
+    <tbody class="card row mt-4 t_foot mb-3">
+      <tr class="card-body offset-1 col-10 row">
+        <td class="menu_name col-md-4 d-flex align-items-center justify-content-center table_data">
+          <%= all_menu.menu_name %>
+        </td>
+        <td class="col-md-4 d-flex align-items-center justify-content-center">
+          <%= image_tag all_menu.image.url, class:"img-fluid" ,alt:"Responsive image" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
-<p>a</p>
