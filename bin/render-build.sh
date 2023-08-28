@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # exit on error
 set -o errexit
-rm Gemfile.lock
 gem install bundler -v 1.17.3
-bundler _1.17.3_ install
 
 bundle install
 bundle exec rake assets:precompile
