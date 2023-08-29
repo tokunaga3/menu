@@ -4,6 +4,7 @@ set -o errexit
 
 # bundle update
 rm Gemfile.lock
+bundle config unset deployment
 gem install bundler -v 1.17.3
 bundler _1.17.3_ install
 # bundle install
@@ -12,3 +13,4 @@ bundler _1.17.3_ install
 # bundle exec rake assets:clean
 # bundle exec rake db:migrate
 # bundle exec rake db:seed
+
