@@ -3,10 +3,13 @@
 set -o errexit
 
 # bundle update
-bundle install
+rm Gemfile.lock
+bundle config unset deployment
 bundle config set --local deployment 'true'
 bundle config set --local without 'test development'
-bundle install
+gem install bundler -v 1.17.3
+bundler _1.17.3_ install
+
 # bundle install
 # bundle lock --add-platform x86_64-linux
 # bundle exec rake assets:precompile
