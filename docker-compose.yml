@@ -1,0 +1,31 @@
+version: "3"
+services:
+  db:
+    container_name: menu_db
+    image: postgres:13.3
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      TZ: "Asia/Tokyo"
+  web:
+    container_name: menu_web
+    build: .
+    entrypoint: ["/bin/sh", "-c"]
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    command:
+      - |
+        bundle install
+        yarn install
+        rm -f tmp/pids/server.pid
+        tail -f /dev/null
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    tty: true
