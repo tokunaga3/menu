@@ -1,5 +1,5 @@
 # ベースとなるDockerイメージの指定
-FROM rubylang/ruby:3.0.6-focal
+FROM rubylang/ruby:2.6.6-bionic-arm64
 
 # 必要なパッケージのインストール
 RUN env DEBIAN_FRONTEND=noninteractive apt-get update && \
