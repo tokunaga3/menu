@@ -18,8 +18,9 @@ WORKDIR /app
 
 # システム依存性のインストール
 COPY Gemfile /app/Gemfile
-# COPY Gemfile.lock /app/Gemfile.lock
-RUN bundle install
+COPY Gemfile.lock /app/Gemfile.lock
+RUN bundle _1.17.2_ install
+
 
 # アプリケーションのコピー
 COPY . /app
