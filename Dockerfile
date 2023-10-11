@@ -1,5 +1,5 @@
 # ベースとなるDockerイメージの指定
-FROM rubylang/ruby:2.6.6
+FROM rubylang/ruby:2.6.0
 
 # 必要なパッケージのインストール
 
