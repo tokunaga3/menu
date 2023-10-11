@@ -5,9 +5,8 @@ FROM rubylang/ruby:3.0.6-focal
 
 # env DEBIAN_FRONTEND=noninteractive apt-get update && \
 #   env DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y build-essential \
+RUN apt-get install -y postgresql-client \
   # libpq-dev \
-  postgresql-client \
   # file \
   nodejs
 # curl
