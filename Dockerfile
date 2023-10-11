@@ -1,5 +1,7 @@
 # ベースとなるDockerイメージの指定
-FROM rubylang/ruby:2.6.6-bionic-arm64
+FROM rubylang/ruby:3.0.6-focal
+
+RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
 
 # 必要なパッケージのインストール
 RUN env DEBIAN_FRONTEND=noninteractive apt-get update && \
