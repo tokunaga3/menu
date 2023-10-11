@@ -8,8 +8,8 @@ FROM rubylang/ruby:3.0.6-focal
 RUN apt-get install -y postgresql-client \
   # libpq-dev \
   # file \
-  nodejs
-# curl
+  # nodejs
+  curl
 
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
   env DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
