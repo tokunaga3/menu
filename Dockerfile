@@ -2,14 +2,17 @@
 FROM rubylang/ruby:3.0.6-focal
 
 # 必要なパッケージのインストール
-RUN apt-get install -y build-essential \
-  libpq-dev \
-  postgresql-client \
-  file \
-  nodejs \
-  curl
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
+# env DEBIAN_FRONTEND=noninteractive apt-get update && \
+#   env DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y build-essential \
+  # libpq-dev \
+  postgresql-client \
+  # file \
+  nodejs \
+  # curl
+
+  RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
   env DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
