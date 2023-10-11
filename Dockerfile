@@ -15,11 +15,12 @@ RUN apt-get update && apt-get install -y build-essential \
 # ワークディレクトリの設定
 RUN mkdir /app
 WORKDIR /app
-ENV DB_USER root
 # システム依存性のインストール
 COPY Gemfile /app/Gemfile
 # COPY Gemfile.lock /app/Gemfile.lock
+
 RUN gem install bundler -v 1.17.2
+RUN bundle config silence_root_warning true
 RUN bundle  install
 
 
