@@ -22,7 +22,7 @@ COPY Gemfile /app/Gemfile
 RUN gem install bundler -v 1.17.2
 RUN bundle config silence_root_warning true
 RUN bundle  install
-
+RUN bundle config set force_ruby_platform true
 
 # アプリケーションのコピー
 COPY . /app
