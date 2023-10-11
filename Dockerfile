@@ -1,25 +1,21 @@
 # ベースとなるDockerイメージの指定
 FROM rubylang/ruby:3.0.6-focal
 
-RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
+# 必要なパッケージのインストール
+RUN apt-get install -y build-essential \
+  libpq-dev \
+  postgresql-client \
+  file \
+  nodejs \
+  curl
 
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
+  env DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 
-RUN apt-get update -qq \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
-  build-essential \
-  gnupg2 \
-  curl \
-  less \
-  git \
-  && apt-get clean \
-  && rm -rf /var/cache/apt/archives/* \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-  && truncate -s 0 /var/log/*log \
-  && curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /usr/share/keyrings/postgres-archive-keyring.gpg \
-  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/postgres-archive-keyring.gpg] https://apt.postgresql.org/pub/repos/apt/" bullseye-pgdg main $PG_MAJOR | tee /etc/apt/sources.list.d/postgres.list > /dev/null \
-  && curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \
-  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor -o /usr/share/keyrings/yarn-archive-keyring.gpg \
-  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list > /dev/null
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+  env DEBIAN_FRONTEND=noninteractive apt-get update && \
+  env DEBIAN_FRONTEND=noninteractive apt-get install -y yarn
 
 # ワークディレクトリの設定
 RUN mkdir /app
