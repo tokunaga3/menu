@@ -7,18 +7,10 @@ FROM rubylang/ruby:3.0.6-focal
 #   env DEBIAN_FRONTEND=noninteractive
 RUN apt-get update;
 RUN apt-get install -y postgresql-client
-# libpq-dev \
-# file \
-# nodejs
-# curl
-
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
-  env DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
-
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-  env DEBIAN_FRONTEND=noninteractive apt-get update && \
-  env DEBIAN_FRONTEND=noninteractive apt-get install -y yarn
+RUN apt-get install -y  libpq-dev
+RUN apt-get install -y  file
+RUN apt-get install -y  nodejs
+RUN apt-get install -y  curl
 
 # ワークディレクトリの設定
 RUN mkdir /app
