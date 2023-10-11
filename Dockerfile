@@ -20,7 +20,7 @@ WORKDIR /app
 COPY Gemfile /app/Gemfile
 # COPY Gemfile.lock /app/Gemfile.lock
 RUN gem install bundler -v 1.17.2
-RUN bundle _1.17.2_ install
+RUN bundle  install
 
 
 # アプリケーションのコピー
