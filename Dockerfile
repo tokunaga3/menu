@@ -19,6 +19,7 @@ WORKDIR /app
 # システム依存性のインストール
 COPY Gemfile /app/Gemfile
 # COPY Gemfile.lock /app/Gemfile.lock
+RUN gem install bundler -v 1.17.2
 RUN bundle _1.17.2_ install
 
 
