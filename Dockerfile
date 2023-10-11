@@ -1,5 +1,5 @@
 # ベースとなるDockerイメージの指定
-FROM rubylang/ruby:2.6.6-bionic-arm64
+FROM rubylang/ruby:2.6
 
 # 必要なパッケージのインストール
 
