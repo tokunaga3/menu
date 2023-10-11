@@ -6,11 +6,11 @@ FROM rubylang/ruby:3.0.6-focal
 # env DEBIAN_FRONTEND=noninteractive apt-get update && \
 #   env DEBIAN_FRONTEND=noninteractive
 RUN apt-get update;
-RUN sudo apt-get install -y postgresql-client \
-  # libpq-dev \
-  # file \
-  # nodejs
-  curl
+RUN apt-get install -y postgresql-client
+# libpq-dev \
+# file \
+# nodejs
+# curl
 
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
   env DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
