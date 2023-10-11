@@ -5,8 +5,7 @@ FROM rubylang/ruby:3.0.6-focal
 
 # env DEBIAN_FRONTEND=noninteractive apt-get update && \
 #   env DEBIAN_FRONTEND=noninteractive
-RUN sudo apt-get update; \
-  sudo apt-get -y upgrade;
+RUN apt-get update;
 RUN sudo apt-get install -y postgresql-client \
   # libpq-dev \
   # file \
