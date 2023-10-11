@@ -29,7 +29,7 @@ COPY . /app
 
 # COPY entrypoint.sh /usr/bin/
 
-RUN chmod +x bin/render-build.sh
+# RUN chmod +x bin/render-build.sh
 
 #RUN chmod +x /usr/bin/entrypoint.sh
 #ENTRYPOINT ["entrypoint.sh"]
