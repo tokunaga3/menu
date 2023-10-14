@@ -21,7 +21,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class MenuList < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :family
 
   has_many :menu_families, dependent: :destroy

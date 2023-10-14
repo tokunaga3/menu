@@ -17,7 +17,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Family < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :menu_lists, dependent: :destroy
   has_many :menu_families, dependent: :destroy
   has_many :menu_lists, through: :menu_families
