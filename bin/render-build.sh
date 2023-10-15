@@ -5,6 +5,6 @@ set -o errexit
 bundle config set force_ruby_platform true
 bundle install
 bundle exec rake  db:migrate
-bundle exec rake db:seed
+# bundle exec rake db:seed
 bundle exec puma -C config/puma.rb
 exec "$@"
