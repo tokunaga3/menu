@@ -9,7 +9,8 @@
 
 
   user_name = User.where(name:"Guest")
-  user_id = user_name.ids[0]
+  # user_id = user_name.ids[0]
+  user_id = 1
 
   @set_guest_family = ["ルフィ","ナミ","ウソップ","ゾロ","ロビン","ブルック","チョッパー","ジンベエ","フランキー","サンジ"]
 
